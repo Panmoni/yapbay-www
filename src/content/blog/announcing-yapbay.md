@@ -4,7 +4,7 @@ title: "Disrupting TradFi Remittances"
 snippet: "Yap Bay uses crypto as a transport layer to bridge fragmented fiat payment networks."
 image:
   {
-    src: "/blog/yap-bay-1/cover.webp",
+    src: "/blog/yap-bay-1/1.png",
     alt: "alt text",
   }
 publishDate: "2024-02-27 16:39"

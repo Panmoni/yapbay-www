@@ -5,7 +5,7 @@ snippet: "Explore the distinctive features of YapBay, a pioneering platform revo
 coverImage: "/assets/blog/yap-bay-2/cover.png"
 image:
   {
-    src: "/blog/yap-bay-2/cover.webp",
+    src: "/blog/yap-bay-2/2.png",
     alt: "alt text",
   }
 publishDate: "2024-03-13 16:39"
