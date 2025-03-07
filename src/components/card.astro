@@ -10,16 +10,16 @@ interface Props {
 const { color = "DEFAULT", size = "md", class: className } = Astro.props;
 
 const colors = {
-  DEFAULT: "bg-gray-50",
-  indigo: "bg-indigo-50",
-  purple: "bg-purple-50",
+  DEFAULT: "bg-neutral-200",
+  primary: "bg-primary-100",
+  secondary: "bg-secondary-300",
 };
 type Color = keyof typeof colors;
 ---
 
 <div
   class:list={[
-    "rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg",
+    "rounded-2xl p-8 bg-neutral-200 transition-all ring-1 ring-neutral-300/50 shadow hover:shadow-lg",
     className,
   ]}>
   <div
@@ -28,7 +28,7 @@ type Color = keyof typeof colors;
       size === "sm" ? "lg:h-60" : "lg:h-80",
     ]}>
     <div
-      class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent z-10">
+      class="absolute inset-0 bg-gradient-to-t from-neutral-200 via-transparent z-10">
     </div>
     <slot name="image" />
   </div>
@@ -41,6 +41,6 @@ type Color = keyof typeof colors;
       )
     }
     <h3 class="text-xl lg:text-2xl font-medium mt-2"><slot name="title" /></h3>
-    <p class="text-slate-600 mt-2 [text-wrap:balance]"><slot name="desc" /></p>
+    <p class="text-neutral-600 mt-2 [text-wrap:balance]"><slot name="desc" /></p>
   </div>
 </div>

@@ -22,16 +22,16 @@ const sizes = {
 
 const styles = {
   outline:
-    "border-2 border-indigo-500 hover:bg-black text-black hover:text-white",
+    "border-2 border-primary-600 hover:bg-neutral-900 text-neutral-900 hover:text-neutral-100",
   primary:
-    "bg-indigo-600 text-white hover:bg-indigo-800  border-2 border-transparent",
+    "bg-primary-600 text-neutral-100 hover:bg-primary-800 border-2 border-transparent",
 };
 ---
 
 <button
   {...rest}
   class:list={[
-    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
+    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-neutral-200",
     block && "w-full",
     sizes[size],
     styles[style],

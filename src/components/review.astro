@@ -6,14 +6,14 @@ const { text, title, name, image } = Astro.props;
 
 <Box
   class="w-[calc(100vw-5.75rem)] max-w-md flex flex-col justify-between snap-start snap-always shrink-0 first-of-type:scroll-m-10 scroll-m-5">
-  <!-- <div class="absolute font-serif text-5xl left-2 top-8 text-slate-300 -z-10">
+  <!-- <div class="absolute font-serif text-5xl left-2 top-8 text-neutral-300 -z-10">
     “
   </div> -->
   <blockquote class="text-lg md:text-xl [text-wrap:balance]">{text}</blockquote>
   <div class="flex items-center gap-3 mt-10">
     <div class="shrink-0">
       <Picture
-        class="rounded-full w-12 h-12 object-cover bg-slate-100"
+        class="rounded-full w-12 h-12 object-cover bg-neutral-100"
         formats={["avif", "webp"]}
         src={image}
         alt={name}
@@ -25,8 +25,8 @@ const { text, title, name, image } = Astro.props;
       />
     </div>
     <div>
-      <h2 class="font-medium text-slate-800">{name}</h2>
-      <p class="text-sm text-slate-600">{title}</p>
+      <h2 class="font-medium text-neutral-800">{name}</h2>
+      <p class="text-sm text-neutral-600">{title}</p>
     </div>
   </div>
 </Box>

@@ -68,10 +68,10 @@ const { page } = Astro.props;
                     </h2>
 
                     <div class="flex gap-2 mt-3 text-sm">
-                      <span class="text-gray-400">{post.data.author}</span>
-                      <span class="text-gray-400">• </span>
+                      <span class="text-neutral-400">{post.data.author}</span>
+                      <span class="text-neutral-400">• </span>
                       <time
-                        class="text-gray-400"
+                        class="text-neutral-400"
                         datetime={post.data.publishDate.toISOString()}>
                         {post.data.publishDate.toDateString()}
                       </time>

@@ -147,7 +147,7 @@ const plans: {
 
 const colors = {
   DEFAULT: "text-neutral-800",
-  indigo: "text-indigo-600",
+  indigo: "text-primary-600",
   orange: "text-orange-700",
   purple: "text-purple-600",
 };
@@ -159,19 +159,19 @@ type Color = keyof typeof colors;
     <h3 class="text-xl lg:text-3xl font-bold lg:tracking-tight">
       Compare Plans
     </h3>
-    <p class="mt-1 text-slate-600">
+    <p class="mt-1 text-neutral-600">
       Use the table below to compare full features of this product.
     </p>
   </div>
 
   {/* Desktop Version */}
   <div
-    class="mt-8 overflow-x-auto lg:overflow-visible w-full border border-slate-200 rounded-md">
+    class="mt-8 overflow-x-auto lg:overflow-visible w-full border border-neutral-200 rounded-md">
     <div class="min-w-max">
       <div
-        class="sticky top-0 py-6 bg-white border-b border-slate-200 rounded-t-md">
+        class="sticky top-0 py-6 bg-white border-b border-neutral-200 rounded-t-md">
         <div class="grid grid-cols-5 gap-0 items-center bg-white">
-          <div class="text-slate-500 px-5">Compare Plans</div>
+          <div class="text-neutral-500 px-5">Compare Plans</div>
           {
             plans.map((plan) => (
               <div class="px-5">
@@ -199,7 +199,7 @@ type Color = keyof typeof colors;
         <div class="grid">
           {
             features.map((feature) => (
-              <div class="border-b border-slate-200 font-medium text-sm py-3 px-5 odd:bg-slate-50">
+              <div class="border-b border-neutral-200 font-medium text-sm py-3 px-5 odd:bg-neutral-200">
                 {feature}
               </div>
             ))
@@ -210,7 +210,7 @@ type Color = keyof typeof colors;
           plans.map((plan) => (
             <div class="grid gap-0">
               {plan.values.map((value) => (
-                <div class="border-b border-slate-200 odd:bg-slate-50 text-sm py-3 px-5">
+                <div class="border-b border-neutral-200 odd:bg-neutral-200 text-sm py-3 px-5">
                   {typeof value === "boolean" ? (
                     <Icon name="ph:check-circle-fill" class="w-5 h-5" />
                   ) : (

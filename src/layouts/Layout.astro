@@ -4,6 +4,8 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
+import "../styles/colors.css";
+import "../styles/color-utilities.css";
 
 interface Props {
   title?: string;
@@ -34,7 +36,7 @@ const makeTitle = title
 
     <SEO
       title={makeTitle}
-      description="Astroship Pro - SAAS & Startup Website Template for Astro built with TailwindCSS."
+      description="Low-cost, high-speed, peer to peer Web3 remittances for the unbanked and underbanked, without the complexities of KYC"
       canonical={canonicalURL}
       twitter={{
         creator: "@georgedonnelly",
@@ -45,11 +47,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship Pro - SAAS &Startup Website Template for Astro`,
+          title: `YapBay: P2P Remittances for the Global South`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "YapBay: P2P Remittances for the Global South",
         },
       }}
     />
