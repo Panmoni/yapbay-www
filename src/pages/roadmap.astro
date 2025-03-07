@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import RoadmapCard from "@components/roadmap-card.astro";
+
+---
+
+<Layout title="Roadmap">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Roadmap</Fragment>
+      <Fragment slot="desc">
+        Our development timeline and upcoming features for YapBay.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 my-24 gap-x-10 gap-y-24">
+      <RoadmapCard
+        quarter="Q1 2025"
+        status="completed"
+        title="Purchase of LocalSolana IP"
+        description="Purchase of the LocalSolana IP, including the domain name, and securing of the source code."
+      />
+
+      <RoadmapCard
+        quarter="Q2 2025"
+        status="in-progress"
+        title="Public Beta Launch"
+        description="Ensure the basic exchange and escrow code works reliably and is secure for public testing."
+        progress={10}
+      />
+
+      <RoadmapCard
+        quarter="Q3 2025"
+        status="in-progress"
+        title="Trader Referral Program & Dashboard"
+        description="Codify the trader referral program and deploy a dashboard for easy management."
+        progress={10}
+      />
+
+      <RoadmapCard
+        quarter="Q3 2025"
+        status="planned"
+        title="Launch Trust Features"
+        description="Add trusted/blocked traders, Civic integration and other trust enhancements."
+      />
+
+      <RoadmapCard
+        quarter="Q4 2025"
+        status="planned"
+        title="Advanced Features"
+        description="Add AI, multi-party transactions and other innovative features."
+      />
+
+      <RoadmapCard
+        quarter="Q1 2026"
+        status="planned"
+        title="Token Generation Event"
+        description="Run a TGE to generate 18 months of runway for a small, focused team."
+      />
+    </div>
+  </Container>
+</Layout>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  quarter: string;
+  status: "completed" | "in-progress" | "planned";
+  title: string;
+  description: string;
+  progress?: number;
+}
+
+const { quarter, status, title, description, progress } = Astro.props;
+
+const statusColors = {
+  "completed": "bg-secondary-500",
+  "in-progress": "bg-primary-500",
+  "planned": "bg-neutral-300"
+};
+
+const statusText = {
+  "completed": "Completed",
+  "in-progress": "In Progress",
+  "planned": "Planned"
+};
+---
+
+<div class="relative">
+  <!-- Card -->
+  <div class={`px-6 py-6 rounded-lg ${
+    status === 'completed' 
+      ? 'bg-secondary-300 border border-secondary-300' 
+      : status === 'in-progress' 
+        ? 'bg-primary-200 border border-primary-300' 
+        : 'bg-neutral-50 border border-neutral-200'
+  } shadow-sm hover:shadow-md transition-shadow duration-200`}>
+    <!-- Quarter & Status -->
+    <div class="flex justify-between items-center mb-3">
+      <span class="text-sm font-medium text-neutral-500">{quarter}</span>
+      <span class={`px-2 py-1 rounded-full text-xs font-medium ${status === 'completed' ? 'bg-secondary-300 text-secondary-500' : status === 'in-progress' ? 'bg-primary-300 text-primary-800' : 'bg-neutral-100 text-neutral-800'}`}>
+        {statusText[status]}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-semibold text-neutral-900 mb-2">{title}</h3>
+
+    <!-- Description -->
+    <p class="text-neutral-600 mb-4">{description}</p>
+
+    <!-- Progress Bar  -->
+    {(status === 'in-progress' || status === 'completed') && (
+    <div class="w-full bg-neutral-200 rounded-full h-2">
+      <div class={`${statusColors[status]} h-2 rounded-full`} style={`width: ${status === 'completed' ? '100' : progress}%`}></div>
+    </div>
+    )}
+  </div>
+</div>
