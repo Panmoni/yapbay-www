@@ -5,8 +5,9 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Link from "@components/ui/link.astro";
-import EmployeeImg from "../assets/employee.jpg";
-import Logos from "@components/logos.astro";
+import About1 from "../assets/about1.jpg";
+import About2 from "../assets/about2.jpg";
+import Deck from "../assets/deck.png";
 import { Icon } from "astro-icon/components";
 import Cta from "@components/cta.astro";
 
@@ -20,16 +21,14 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   <Container>
     <Sectionhead>
       <Fragment slot="badge">ABOUT US</Fragment>
-      <Fragment slot="title">We're Building Future</Fragment>
+      <Fragment slot="title">Building Financial Freedom</Fragment>
       <Fragment slot="desc">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special..
+        YapBay is a Web3 P2P remittances network that enables remittance senders to chain together P2P crypto trades over stablecoin rails, bypassing TradFi limits, to disrupt the legacy remittances industry. Censorship-resistant and KYC-free, YapBay fosters financial inclusion for the world's 2 billion unbanked and underbanked.
       </Fragment>
     </Sectionhead>
     <div class="mt-6 text-center">
-      <Link style="outline" size="sm" href="#" target="_blank" rel="noopener">
-        Learn more →
+      <Link style="outline" size="sm" href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank" rel="noopener">
+        See the YapBay deck →
       </Link>
     </div>
 
@@ -48,7 +47,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         </div>
         <Picture
           formats={["avif", "webp"]}
-          src={EmployeeImg}
+          src={About1}
           alt="Happy Team"
           class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
           loading="lazy"
@@ -61,32 +60,222 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           <strong>Mission</strong>
         </h2>
         <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
-          We're a multi-cultural team from around the world! We come from
-          diverse backgrounds, bringing different personalities, experiences and
-          skills to the job. This is what makes our team so special.
+          Our mission is to facilitate access to cryptocurrency for people across the globe, without the need for onerous KYC procedures or the arbitrary limits and opaque reserve status of centralized exchanges.
+        </p>
+        <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
+          We are building a peer-to-peer crypto exchange that provides anyone, anywhere with uncensorable, KYC-free, transparent and open-source fiat on-ramps and off-ramps.
         </p>
         <ul class="grid mt-6 text-left gap-y-4">
           <li class="flex items-center gap-3 text-neutral-800">
             <Icon name="ph:check-circle-fill" class="w-5 h-5" />
 
-            <span class="text-neutral-600">Intelligent Task Management</span>
+            <span class="text-neutral-600">Financial Inclusion</span>
           </li>
 
           <li class="flex items-center gap-3 text-neutral-800">
             <Icon name="ph:check-circle-fill" class="w-5 h-5" />
 
-            <span class="text-neutral-600">Real-time Collaboration</span>
+            <span class="text-neutral-600">Affordable Remittances</span>
           </li>
 
           <li class="flex items-center gap-3 text-neutral-800">
             <Icon name="ph:check-circle-fill" class="w-5 h-5" />
 
-            <span class="text-neutral-600">Data Security & Privacy</span>
+            <span class="text-neutral-600">Censorship Resistance</span>
           </li>
         </ul>
       </div>
     </div>
 
+    <!-- Problem Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        The <span class="text-primary-600 font-bold">Problem</span>
+      </h2>
+      <div class="mt-6 space-y-6 text-neutral-600">
+        <p class="text-lg">
+          Sub-$200 remittances frequently incur high fixed fees compared to the modest sums sent. This makes them expensive for certain remittance corridors that terminate in Africa, SE Asia and Latin America.
+        </p>
+        <p class="text-lg">
+          These steep costs hinder individuals from supporting their families, impede their participation in the global economy and frustrate capital formation in their home countries.
+        </p>
+        <p class="text-lg">
+          The World Bank reports that the average cost of sending $200 remains high at 6.2% in 2023, far from the 3% target set for 2030.
+        </p>
+      </div>
+    </div>
+
+    <!-- Solution Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Our <span class="text-primary-600 font-bold">Solution</span>
+      </h2>
+      <div class="mt-6 space-y-6 text-neutral-600">
+        <p class="text-lg">
+          YapBay is a LocalBitcoins where remittance senders chain together 2 peer-to-peer trade offers into 1 fiat-in, fiat-out remittance transaction. Behind the scenes, P2P traders use stablecoins as a fast, hassle-free and low-cost transport layer. Remittance senders and receivers use their preferred fiat currencies and avoid any need for immediate onboarding, technical knowledge or exposure to volatility.
+        </p>
+        <p class="text-lg">
+          Remittance senders can also buy basic necessities, such as groceries and medicines, from merchants that are local to their remittance recipients. Often, merchants can deliver these products to the recipients' homes. We call these "combo remittances".
+        </p>
+      </div>
+    </div>
+
+        <!-- Impact Section -->
+        <div class="mt-24 max-w-4xl mx-auto">
+          <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+            Our <span class="text-primary-600 font-bold">Impact</span>
+          </h2>
+          <div class="mt-6 space-y-6 text-neutral-600">
+            <p class="text-lg">
+              YapBay has the potential to significantly reduce the cost of remittances for millions of people in developing countries, enabling them to send and receive more money to support their families and communities. By driving the adoption of cryptocurrency as a medium of exchange, the project also contributes to the broader goal of financial inclusion and economic empowerment.
+            </p>
+            <p class="text-lg">
+              YapBay addresses the clear need for more accessible, affordable and efficient remittance services in the global financial ecosystem. By leveraging open-source technologies and decentralized infrastructure, YapBay aims to fill the gap in serving the world's unbanked and underbanked population, who are currently underserved by traditional remittance providers due to high fees, limited access and slow transactions.
+            </p>
+            <p class="text-lg">
+              YapBay's impact can extend beyond the direct remittance market. By driving the adoption of cryptocurrency as a medium of exchange and empowering individuals to participate in the global economy on their own terms, YapBay can help unlock trillions of dollars in pent-up capital and stimulate economic growth in underserved regions.
+            </p>
+          </div>
+        </div>
+
+    <!-- Unique Value Section -->
+    <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
+      <div class="place-self-center">
+        <h2 class="text-5xl text-neutral-800 tracking-tight -mt-2">
+          <span class="text-primary-600">Unique</span>
+          {" "}
+          <strong>Value</strong>
+        </h2>
+        <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
+          YapBay has a few characteristics that set it apart from other remittance solutions in the market.
+        </p>
+
+        <ul class="grid mt-6 text-left gap-y-4">
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Focus on sub-$200 remittances</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Smart-contract-based</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Innovative, trustless sequential escrow</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">No protocol-level KYC/AML</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Lower fees and faster than TradFi</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Acceptance of users who lack sufficient formal identification</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Combo remittances</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">Based on 4 years of Latam fieldwork</span>
+        </li>
+
+        <li class="flex items-center gap-3 text-neutral-800">
+          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+          <span class="text-neutral-600">We see the developing world as a business opportunity, not a charity</span>
+        </li>
+
+        </ul>
+      </div>
+
+
+
+      
+      <div class="relative">
+        <div
+          class="absolute hidden md:block w-96 h-96 bg-purple-100 rounded-full left-0 top-1/3 -z-10">
+        </div>
+        <div
+          class="absolute hidden md:block w-44 h-44 bg-purple-100 rounded-full right-10 top-1/4 -z-10">
+        </div>
+        <Picture
+          formats={["avif", "webp"]}
+          src={About2}
+          alt="YapBay Unique Value"
+          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Our <span class="text-primary-600 font-bold">Progress</span>
+      </h2>
+      <div class="mt-6 space-y-6 text-neutral-600">
+        <p class="text-lg">
+          YapBay is at a pre-seed stage and the development of an MVP should be complete by the end of Q2 2025. We're currently building on EVM, <a href="https://localsolana.com/" target="_blank">Solana</a> and Sui.
+        </p>
+        <p class="text-lg">
+          From 2018 to 2021, I and my teams performed extensive fieldwork in Latin America educating new crypto users and learning what they want. We did a remittances pilot between Madrid and Caracas in 2019, which was quite popular among Venezuelans in Spain.
+        </p>
+        <p class="text-lg">
+          The project benefits from the contact information of about 10,000 people onboarded to crypto during our fieldwork.
+        </p>
+
+        <p class="text-lg">
+          We're currently building new communities in Nigeria and Venezuela.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Our <span class="text-primary-600 font-bold">Vision</span>
+      </h2>
+      <p class="text-lg mt-6 text-neutral-600">
+        We envision a world of universal prosperity, where every human being has the opportunity to realize their potential. A world where everyone, everywhere, enjoys monetary freedom and can use and create money as they see fit, trading it on a voluntary basis across borders, from anywhere to anywhere and from anyone to anyone. We strive for a world of crypto mass adoption, where everyone has access to prosperity and no one is cut out of the system or left behind.
+      </p>
+    </div>
+
+    <!-- Deck Section -->
+    <div class="mt-24 max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight">
+        YapBay <span class="text-primary-600 font-bold">Deck</span>
+      </h2>
+      <p class="text-lg mt-6 text-neutral-600 mb-8">
+        <a href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank" class="text-primary-600 hover:underline inline-flex items-center gap-1">
+          Download the current YapBay deck <Icon name="ph:arrow-right" class="w-5 h-5" />
+        </a>
+      </p>
+      <div class="max-w-2xl mx-auto overflow-hidden">
+        <a href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank">
+          <Picture
+          formats={["avif", "webp"]}
+          src={Deck}
+          alt="The YapBay Deck"
+          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
+          loading="lazy"
+        />
+        </a>
+      </div>
+    </div>
+
+    <!-- Team Section -->
     <div class="mt-24">
       <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
         Core <span class="text-primary-600 font-bold">Team</span>
@@ -122,6 +311,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         ))
       }
     </div>
+    <p class="mt-12 text-xs">Photo by <a href="https://unsplash.com/@paulofelipeassis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Felipe Assis</a> on <a href="https://unsplash.com/photos/woman-in-white-blazer-holding-iphone-CCtHdZ5zvlU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
   </Container>
   <Cta />
 </Layout>
