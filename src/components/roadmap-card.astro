@@ -33,7 +33,7 @@ const statusText = {
   } shadow-sm hover:shadow-md transition-shadow duration-200`}>
     <!-- Quarter & Status -->
     <div class="flex justify-between items-center mb-3">
-      <span class="text-sm font-medium text-neutral-500">{quarter}</span>
+      <span class="text-sm font-medium text-neutral-900">{quarter}</span>
       <span class={`px-2 py-1 rounded-full text-xs font-medium ${status === 'completed' ? 'bg-secondary-300 text-secondary-500' : status === 'in-progress' ? 'bg-primary-300 text-primary-800' : 'bg-neutral-100 text-neutral-800'}`}>
         {statusText[status]}
       </span>
