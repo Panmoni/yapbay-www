@@ -18,9 +18,8 @@ features: smart contract, self custodial, unlimited by geographic borders,
 CTA: waitlist
 
 ### blog
-- clear out sample content
-- migrate 2 posts
-- write a new one
+- update cover images for 2 posts
+- write a new post
 
 ### roadmap
 - update content of roadmap
