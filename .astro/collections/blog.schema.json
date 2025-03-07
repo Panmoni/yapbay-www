@@ -47,7 +47,7 @@
         },
         "author": {
           "type": "string",
-          "default": "Astroship"
+          "default": "YapBay"
         },
         "category": {
           "type": "string"

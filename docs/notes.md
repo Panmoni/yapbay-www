@@ -30,8 +30,3 @@ CTA: waitlist
 
 ### Terms and Privacy
 add terms and privacy pages
-
-### about
-
-Photo by <a href="https://unsplash.com/@paulofelipeassis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Felipe Assis</a> on <a href="https://unsplash.com/photos/woman-in-white-blazer-holding-iphone-CCtHdZ5zvlU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-      
