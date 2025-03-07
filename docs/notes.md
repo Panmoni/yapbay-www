@@ -1,5 +1,13 @@
 # Notes
 ## Todo
+
+### Font
+- Roboto
+- Work Sans
+- IBM Plex Sans
+- Roboto Flex
+- Red Hat Display
+- Red Hat Text
 ### Frontpage
 - CTA: get on waitlist, join telegram group
 
