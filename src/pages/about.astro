@@ -40,10 +40,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
       <div class="relative">
         <div
-          class="absolute hidden md:block w-96 h-96 bg-purple-100 rounded-full right-0 top-1/3 -z-10">
+          class="absolute hidden md:block w-96 h-96 bg-secondary-300 rounded-full right-0 top-1/3 -z-10">
         </div>
         <div
-          class="absolute hidden md:block w-44 h-44 bg-purple-100 rounded-full left-10 top-1/4 -z-10">
+          class="absolute hidden md:block w-44 h-44 bg-secondary-300 rounded-full left-10 top-1/4 -z-10">
         </div>
         <Picture
           formats={["avif", "webp"]}
@@ -205,10 +205,10 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       
       <div class="relative">
         <div
-          class="absolute hidden md:block w-96 h-96 bg-purple-100 rounded-full left-0 top-1/3 -z-10">
+          class="absolute hidden md:block w-96 h-96 bg-secondary-300 rounded-full left-0 top-1/3 -z-10">
         </div>
         <div
-          class="absolute hidden md:block w-44 h-44 bg-purple-100 rounded-full right-10 top-1/4 -z-10">
+          class="absolute hidden md:block w-44 h-44 bg-secondary-300 rounded-full right-10 top-1/4 -z-10">
         </div>
         <Picture
           formats={["avif", "webp"]}
@@ -242,16 +242,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </div>
     </div>
 
-    <!-- Vision Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Vision</span>
-      </h2>
-      <p class="text-lg mt-6 text-neutral-600">
-        We envision a world of universal prosperity, where every human being has the opportunity to realize their potential. A world where everyone, everywhere, enjoys monetary freedom and can use and create money as they see fit, trading it on a voluntary basis across borders, from anywhere to anywhere and from anyone to anyone. We strive for a world of crypto mass adoption, where everyone has access to prosperity and no one is cut out of the system or left behind.
-      </p>
-    </div>
-
     <!-- Deck Section -->
     <div class="mt-24 max-w-4xl mx-auto text-center">
       <h2 class="text-4xl lg:text-5xl lg:tracking-tight">
@@ -268,20 +258,31 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           formats={["avif", "webp"]}
           src={Deck}
           alt="The YapBay Deck"
-          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
+          class="rounded-xl w-full max-w-xl mx-auto shadow-2xl"
           loading="lazy"
         />
         </a>
       </div>
     </div>
 
+    <!-- Vision Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Our <span class="text-primary-600 font-bold">Vision</span>
+      </h2>
+      
+      <p class="text-lg mt-6 text-neutral-600">
+        We envision a world of universal prosperity, where every human being has the opportunity to realize their potential. A world where everyone, everywhere, enjoys monetary freedom and can use and create money as they see fit, trading it on a voluntary basis across borders, from anywhere to anywhere and from anyone to anyone. We strive for a world of crypto mass adoption, where everyone has access to prosperity and no one is cut out of the system or left behind.
+      </p>
+    </div>
+
     <!-- Team Section -->
     <div class="mt-24">
       <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Core <span class="text-primary-600 font-bold">Team</span>
+        Our <span class="text-primary-600 font-bold">Team</span>
       </h2>
       <p class="text-lg mt-4 text-neutral-600 text-center">
-        YapBay is built by these awesome individuals.
+        YapBay is built by these awesome individuals. Seeking visionary builders to join us!
       </p>
     </div>
 
