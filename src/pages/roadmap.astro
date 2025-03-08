@@ -17,47 +17,48 @@ import RoadmapCard from "@components/roadmap-card.astro";
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 my-24 gap-x-10 gap-y-24">
       <RoadmapCard
-        quarter="Q1 2025"
-        status="completed"
-        title="Purchase of LocalSolana IP"
-        description="Purchase of the LocalSolana IP, including the domain name, and securing of the source code."
+        quarter="Q2 2025"
+        status="in-progress"
+        title="MVP on Sui"
+        description="Build an MVP on Sui using Move as part of the Overflow hackathon."
+        progress={70}
       />
 
       <RoadmapCard
         quarter="Q2 2025"
         status="in-progress"
-        title="Public Beta Launch"
-        description="Ensure the basic exchange and escrow code works reliably and is secure for public testing."
+        title="MVP on EVM"
+        description="Build a new MVP in Solidity and deploy on a TBD EVM chain."
         progress={10}
       />
 
       <RoadmapCard
         quarter="Q3 2025"
         status="in-progress"
-        title="Trader Referral Program"
-        description="Codify the trader referral program and deploy a dashboard for easy management."
+        title="Build First 2 Corridors"
+        description="Develop a community of traders in our first two corridors and achieve 100 transactions."
         progress={10}
-      />
-
-      <RoadmapCard
-        quarter="Q3 2025"
-        status="planned"
-        title="Launch Trust Features"
-        description="Add trusted/blocked traders, Civic integration and other trust enhancements."
       />
 
       <RoadmapCard
         quarter="Q4 2025"
         status="planned"
-        title="Advanced Features"
-        description="Add AI, multi-party transactions and other innovative features."
+        title="Launch Trust Features"
+        description="Add trusted/blocked traders, Civic integration and trust network MVP."
+      />
+
+      <RoadmapCard
+        quarter="Q4 2025"
+        status="planned"
+        title="Trader Referral Program"
+        description="Build and deploy the viral trader referral program and dashboard."
       />
 
       <RoadmapCard
         quarter="Q1 2026"
         status="planned"
-        title="Token Generation Event"
-        description="Run a TGE to generate 18 months of runway for a small, focused team."
+        title="Combo Remittances Marketplace"
+        description="Develop a marketplace of good & services in selected corridors."
       />
     </div>
   </Container>
