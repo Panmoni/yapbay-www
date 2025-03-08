@@ -1,56 +1,48 @@
 ---
 layout: ../layouts/MdLayout.astro
 title: "Privacy Policy"
-author: "Matthew Phillips"
-date: "09 Aug 2023"
+author: "George Donnelly"
+date: "03 Nov 2023"
 ---
 
-At Astroship, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our Software-as-a-Service (SaaS) platform.
+### 1. Introduction
 
-By using Astroship, you consent to the practices described in this Privacy Policy. If you do not agree with any part of this policy, please refrain from using Astroship.
+Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, YapBay.com. Please read this policy carefully to understand our practices regarding your information and how we will treat it.
 
-## 1. Information We Collect
+### 2. Information We Collect
 
-1.1. **Personal Information**: When you create an account or use certain features of Astroship, we may collect personal information such as your name, email address, and other contact details.
+When you visit YapBay.com, we try not to collect any information about you whatsoever, however CloudFlare and Vercel likely collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed on your device. Additionally, as you browse the site, we collect information about the individual web pages that you view, what websites or search terms referred you to the site, and information about how you interact with the site. We refer to this automatically-collected information as “Device Information”.
 
-1.2. **Usage Data**: We may collect data about how you use Astroship, including your interactions with the platform and the features you access.
+We collect Device Information using the following technologies:
 
-1.3. **Cookies and Similar Technologies**: Astroship may use cookies and similar tracking technologies to enhance your experience and gather information about your usage patterns.
+*   **Cookies:** Data files that are placed on your device or computer and often include an anonymous unique identifier. For more information about cookies, and how to disable cookies, visit [http://www.allaboutcookies.org](http://www.allaboutcookies.org) .
+*   **Log Files:** Track actions occurring on the site, and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.
+*   **Web Beacons, Tags, and Pixels:** Electronic files used to record information about how you browse the site.
 
-## 2. How We Use Your Information
+The collection of this Device Information is facilitated through Google Analytics, Vercel, and CloudFlare, which are third-party service providers.
 
-2.1. We use the information collected to provide, maintain, and improve Astroship's services and user experience.
+### 3. Use of Your Information
 
-2.2. Your personal information may be used to communicate with you regarding important updates, announcements, or other relevant information.
+We do not use the information that we collect for any purpose, however CloudFlare and Vercel may be using it for a variety of purposes. We may use Google Analytics data generally to improve and optimize our site (for example, by generating analytics about how our customers browse and interact with the site, and to assess the success of our marketing and advertising campaigns).
 
-2.3. We may use aggregated and anonymized data for analytical and statistical purposes.
+### 4. Sharing Your Information
 
-## 3. Data Sharing and Disclosure
+We share your Device Information with third parties to help us use your Device Information, as described above. For example, we use Google Analytics to help us understand how our customers use the site -- you can read more about how Google uses your Personal Information here: [https://www.google.com/intl/en/policies/privacy/](https://www.google.com/intl/en/policies/privacy/) . You can also opt-out of Google Analytics here: [https://tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout) .
 
-3.1. Astroship will not sell, rent, or lease your personal information to third parties.
+Additionally, we may also share your information to comply with applicable laws and regulations, to respond to a subpoena, search warrant, or other lawful requests for information we receive, or to otherwise protect our rights. That said, we will actively resist all such attempts and plan to establish a warrant canary on-chain in the coming days.
 
-3.2. We may share your information with trusted service providers who assist us in operating and maintaining Astroship, but they will be bound by confidentiality obligations.
+### 5. Your Choices
 
-3.3. We may disclose your information if required by law or when we believe such action is necessary to protect our rights or comply with legal proceedings.
+You can opt-out of certain data collection practices by following the links provided above, or by adjusting the settings in your web browser.
 
-## 4. Data Security
+### 6. Security
 
-4.1. Astroship implements industry-standard security measures to protect your personal information from unauthorized access, loss, misuse, or alteration.
+We employ reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction.
 
-4.2. While we take reasonable precautions, no method of data transmission over the internet or electronic storage is entirely secure. Therefore, we cannot guarantee absolute security.
+### 7. Changes to This Policy
 
-## 5. Third-Party Links
+We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons.
 
-5.1. Astroship may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these websites. Please review their privacy policies before using them.
+### 8. Contact Information
 
-## 6. Children's Privacy
-
-6.1. Astroship is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us to delete it.
-
-## 7. Changes to this Privacy Policy
-
-7.1. We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Last updated" date will be revised accordingly.
-
-## 8. Contact Us
-
-8.1. If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at [your contact email].
+For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at [hello@panmoni.com](mailto:hello@panmoni.com).
