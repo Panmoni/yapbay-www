@@ -4,40 +4,40 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Low-Cost Remittances",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "fluent:document-javascript-24-regular",
+      "Bypass TradFi fees, paperwork and limits to remit money home fiat-to-fiat using any payment method.",
+    icon: "fluent:money-24-regular",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Secure Escrow System",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "fluent:trophy-24-regular",
+      "Sequential escrow ensures each step of your transaction is safe and secure, protecting all parties involved. Dispute resolution included.",
+    icon: "fluent:checkmark-lock-24-regular",
   },
   {
-    title: "On-Demand Components",
+    title: "Global & Borderless",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "fluent:box-24-regular",
+      "Effortlessly connect with payment solutions spanning multiple countries and financial networks, free from TradFi restrictions.",
+    icon: "fluent:globe-24-regular",
   },
   {
-    title: "Broad Integration",
+    title: "Community-Led",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "fluent:box-multiple-24-regular",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "fluent:book-search-24-regular",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "Join a community-governed P2P ecosystem focused on financial inclusion and empowerment. Grow, learn and earn.",
     icon: "fluent:people-community-24-regular",
+  },
+  {
+    title: "Open Source and Transparent",
+    description:
+      "Benefit from an open-source Web3 smart-contract-based network that prioritizes transparency and accessibility.",
+    icon: "fluent:book-open-24-regular",
+  },
+  {
+    title: "KYC-Free Web3 Protocol",
+    description:
+      "Avoid unnecessary paperwork and complications with our smart-contract-based remittances protocol.",
+    icon: "fluent:protocol-handler-24-regular",
   },
 ];
 ---
@@ -51,14 +51,12 @@ const features = [
   </p>
 </div> -->
 <div class="mt-24 max-w-3xl mx-auto flex flex-col items-center justify-center">
-  <Badge color="purple">MORE FEATURES</Badge>
+  <Badge color="primary">FEATURES</Badge>
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center">
-    We've got you covered
+    Empowering Global Transactions
   </h2>
   <p class="text-lg mt-4 text-neutral-600 text-center [text-wrap:pretty]">
-    Our template covers all things SAAS. If you don't find what you're looking
-    for, contact us and we'll either help you or steer you in the right
-    direction.
+    YapBay empowers you to make fast, cost-effective borderless transactions for a new era of financial inclusion.
   </p>
 </div>
 
@@ -66,7 +64,7 @@ const features = [
   {
     features.map((item) => (
       <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 hover:border-neutral-100 border border-transparent rounded-lg transition-all md:-m-5 p-5">
-        <div class="mt-1 bg-indigo-50 border shadow shadow-indigo-100/50 border-indigo-100 transition-colors rounded-lg grid place-items-center  p-2 w-10 h-10 shrink-0">
+        <div class="mt-1 bg-primary-100 border shadow shadow-primary-100/50 border-primary-100 transition-colors rounded-lg grid place-items-center  p-2 w-10 h-10 shrink-0">
           <Icon class="text-primary-500" name={item.icon} size={24} />
         </div>
         <div>
