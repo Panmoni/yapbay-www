@@ -5,9 +5,12 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Link from "@components/ui/link.astro";
-import About1 from "../assets/about1.jpg";
-import About2 from "../assets/about2.jpg";
-import Deck from "../assets/deck.png";
+import About1 from "../assets/about/about1.jpg";
+import About2 from "../assets/about/about2.jpg";
+import Deck from "../assets/about/deck.png";
+import Solution from "../assets/about/solution.svg";
+import Impact from "../assets/about/impact.svg";
+import Vision from "../assets/about/vision.svg";
 import { Icon } from "astro-icon/components";
 import Cta from "@components/cta.astro";
 
@@ -83,6 +86,18 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 
             <span class="text-neutral-600">Censorship Resistance</span>
           </li>
+
+          <li class="flex items-center gap-3 text-neutral-800">
+            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+            <span class="text-neutral-600">Crisis Resilience</span>
+          </li>
+
+          <li class="flex items-center gap-3 text-neutral-800">
+            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
+
+            <span class="text-neutral-600">Economic Empowerment</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -94,16 +109,30 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </h2>
       <div class="mt-6 space-y-6 text-neutral-600">
         <p class="text-lg">
-          Sub-$200 remittances frequently incur high fixed fees compared to the modest sums sent. This makes them expensive for certain remittance corridors that terminate in Africa, SE Asia and Latin America.
+          <span class="font-semibold">Expensive Fees</span>: Sub-$200 remittances face high fixed fees, disproportionately affecting smaller transfers to regions like Africa, Southeast Asia and Latin America. Some corridors even face exorbitant fees.
         </p>
         <p class="text-lg">
-          These steep costs hinder individuals from supporting their families, impede their participation in the global economy and frustrate capital formation in their home countries.
+          <span class="font-semibold">Economic Barriers</span>: These fees hinder families from accessing basic needs, stifling economic growth and participation in their home countries.
         </p>
         <p class="text-lg">
-          The World Bank reports that the average cost of sending $200 remains high at 6.2% in 2023, far from the 3% target set for 2030.
+          <span class="font-semibold">Opportunity Limitation</span>: High fees block billions of potential capital flow, preventing economic empowerment, effective capital formation and innovation in developing regions.
+        </p>
+        <p class="text-lg">
+          <span class="font-semibold">ID Exclusion</span>: Over 1 billion lack formal IDs, locking them out of secure global finance and forcing reliance on costly informal channels.
+        </p>
+        <p class="text-lg">
+          <span class="font-semibold">Crisis Fragility</span>: Power outages and unreliable networks cripple remittance access during emergencies, leaving families stranded or at the mercy of predatory providers. 
+        </p>
+        <p class="text-lg">
+          <span class="font-semibold">Global Inequality</span>: At 6.2%, remittance costs in 2023 remain far above the World Bank’s 3% target, highlighting a pressing need for change.
+        </p>
+        <p class="text-lg">
+          <span class="font-semibold">Trapped Capital</span>: TradFi systems block $26B+ in potential annual capital flow to Africa alone, stifling entrepreneurship and poverty reduction efforts.
         </p>
       </div>
     </div>
+
+
 
     <!-- Solution Section -->
     <div class="mt-24 max-w-4xl mx-auto">
@@ -120,23 +149,45 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </div>
     </div>
 
-        <!-- Impact Section -->
-        <div class="mt-24 max-w-4xl mx-auto">
-          <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-            Our <span class="text-primary-600 font-bold">Impact</span>
-          </h2>
-          <div class="mt-6 space-y-6 text-neutral-600">
-            <p class="text-lg">
-              YapBay has the potential to significantly reduce the cost of remittances for millions of people in developing countries, enabling them to send and receive more money to support their families and communities. By driving the adoption of cryptocurrency as a medium of exchange, the project also contributes to the broader goal of financial inclusion and economic empowerment.
-            </p>
-            <p class="text-lg">
-              YapBay addresses the clear need for more accessible, affordable and efficient remittance services in the global financial ecosystem. By leveraging open-source technologies and decentralized infrastructure, YapBay aims to fill the gap in serving the world's unbanked and underbanked population, who are currently underserved by traditional remittance providers due to high fees, limited access and slow transactions.
-            </p>
-            <p class="text-lg">
-              YapBay's impact can extend beyond the direct remittance market. By driving the adoption of cryptocurrency as a medium of exchange and empowering individuals to participate in the global economy on their own terms, YapBay can help unlock trillions of dollars in pent-up capital and stimulate economic growth in underserved regions.
-            </p>
-          </div>
-        </div>
+    <!-- Solution illustration -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <Picture
+            formats={["avif", "webp"]}
+            src={Solution}
+            alt="YapBay Solution"
+            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
+            loading="lazy"
+          />
+    </div>
+
+    <!-- Impact Section -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
+        Our <span class="text-primary-600 font-bold">Impact</span>
+      </h2>
+      <div class="mt-6 space-y-6 text-neutral-600">
+        <p class="text-lg">
+          YapBay has the potential to significantly reduce the cost of remittances for millions of people in developing countries, enabling them to send and receive more money to support their families and communities. By driving the adoption of cryptocurrency as a medium of exchange, the project also contributes to the broader goal of financial inclusion and economic empowerment.
+        </p>
+        <p class="text-lg">
+          YapBay addresses the clear need for more accessible, affordable and efficient remittance services in the global financial ecosystem. By leveraging open-source technologies and decentralized infrastructure, YapBay aims to fill the gap in serving the world's unbanked and underbanked population, who are currently underserved by traditional remittance providers due to high fees, limited access and slow transactions.
+        </p>
+        <p class="text-lg">
+          YapBay's impact can extend beyond the direct remittance market. By driving the adoption of cryptocurrency as a medium of exchange and empowering individuals to participate in the global economy on their own terms, YapBay can help unlock trillions of dollars in pent-up capital and stimulate economic growth in underserved regions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Impact illustration -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <Picture
+            formats={["avif", "webp"]}
+            src={Impact}
+            alt="YapBay Impact"
+            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
+            loading="lazy"
+          />
+    </div>
 
     <!-- Unique Value Section -->
     <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
@@ -227,17 +278,14 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       </h2>
       <div class="mt-6 space-y-6 text-neutral-600">
         <p class="text-lg">
-          YapBay is at a pre-seed stage and the development of an MVP should be complete by the end of Q2 2025. We're currently building on EVM, <a href="https://localsolana.com/" target="_blank">Solana</a> and Sui.
+          YapBay is at a pre-seed stage and the development of an MVP should be complete before the end of Q2 2025. We're currently building on EVM, <a href="https://localsolana.com/" target="_blank">Solana</a> and Sui.
         </p>
         <p class="text-lg">
-          From 2018 to 2021, I and my teams performed extensive fieldwork in Latin America educating new crypto users and learning what they want. We did a remittances pilot between Madrid and Caracas in 2019, which was quite popular among Venezuelans in Spain.
-        </p>
-        <p class="text-lg">
-          The project benefits from the contact information of about 10,000 people onboarded to crypto during our fieldwork.
+          From 2018 to 2021, I and my teams performed extensive fieldwork in Latin America educating new crypto users and learning what they want. We did a remittances pilot between Madrid and Caracas in 2019, which was quite popular among Venezuelans in Spain. The project benefits from the contact information of about 10,000 people onboarded to crypto during our fieldwork.
         </p>
 
         <p class="text-lg">
-          We're currently building new communities in Nigeria and Venezuela.
+          We're currently building new communities, with a particular focus on Nigeria and Venezuela.
         </p>
       </div>
     </div>
@@ -274,6 +322,18 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <p class="text-lg mt-6 text-neutral-600">
         We envision a world of universal prosperity, where every human being has the opportunity to realize their potential. A world where everyone, everywhere, enjoys monetary freedom and can use and create money as they see fit, trading it on a voluntary basis across borders, from anywhere to anywhere and from anyone to anyone. We strive for a world of crypto mass adoption, where everyone has access to prosperity and no one is cut out of the system or left behind.
       </p>
+    </div>
+
+
+    <!-- Vision illustration -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <Picture
+            formats={["avif", "webp"]}
+            src={Vision}
+            alt="YapBay Vision"
+            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
+            loading="lazy"
+          />
     </div>
 
     <!-- Team Section -->
