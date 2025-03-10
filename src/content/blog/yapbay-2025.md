@@ -26,7 +26,7 @@ One of the most exciting developments has been LocalSolana's community building 
 ## Technical Evolution
 
 ### Simplifying Our Approach
-After reflection and evaluation, I realized the Solidity contracts developed earlier this year were unnecessarily complex for an MVP. This led to a comprehensive redesign of YapBay's architecture, focusing on producing a leaner, more efficient platform that can launch faster while maintaining our core value proposition.
+After reflection and evaluation, I realized the Solidity contracts developed in 2024 were unnecessarily complex for an MVP. This led to a comprehensive redesign of YapBay's architecture, focusing on producing a leaner, more efficient platform that can launch faster while maintaining our core value proposition.
 
 ### New Architecture
 The redesigned YapBay architecture now consists of:
