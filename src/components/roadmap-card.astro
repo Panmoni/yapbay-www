@@ -1,7 +1,7 @@
 ---
 interface Props {
   quarter: string;
-  status: "completed" | "in-progress" | "planned";
+  status: "completed" | "in-progress" | "planned" | "postponed";
   title: string;
   description: string;
   progress?: number;
@@ -12,13 +12,15 @@ const { quarter, status, title, description, progress } = Astro.props;
 const statusColors = {
   "completed": "bg-secondary-500",
   "in-progress": "bg-primary-500",
-  "planned": "bg-neutral-300"
+  "planned": "bg-neutral-300",
+  "postponed": "bg-neutral-400"
 };
 
 const statusText = {
   "completed": "Completed",
   "in-progress": "In Progress",
-  "planned": "Planned"
+  "planned": "Planned",
+  "postponed": "Postponed"
 };
 ---
 
@@ -29,12 +31,22 @@ const statusText = {
       ? 'bg-secondary-300 border border-secondary-300' 
       : status === 'in-progress' 
         ? 'bg-primary-200 border border-primary-300' 
-        : 'bg-neutral-50 border border-neutral-200'
+        : status === 'postponed'
+          ? 'bg-neutral-100 border border-neutral-300'
+          : 'bg-neutral-50 border border-neutral-200'
   } shadow-sm hover:shadow-md transition-shadow duration-200`}>
     <!-- Quarter & Status -->
     <div class="flex justify-between items-center mb-3">
       <span class="text-sm font-medium text-neutral-900">{quarter}</span>
-      <span class={`px-2 py-1 rounded-full text-xs font-medium ${status === 'completed' ? 'bg-secondary-300 text-secondary-500' : status === 'in-progress' ? 'bg-primary-300 text-primary-800' : 'bg-neutral-100 text-neutral-800'}`}>
+      <span class={`px-2 py-1 rounded-full text-xs font-medium ${
+        status === 'completed' 
+          ? 'bg-secondary-300 text-secondary-500' 
+          : status === 'in-progress' 
+            ? 'bg-primary-300 text-primary-800' 
+            : status === 'postponed'
+              ? 'bg-neutral-200 text-neutral-600'
+              : 'bg-neutral-100 text-neutral-800'
+      }`}>
         {statusText[status]}
       </span>
     </div>
@@ -46,7 +58,7 @@ const statusText = {
     <p class="text-neutral-600 mb-4">{description}</p>
 
     <!-- Progress Bar  -->
-    {(status === 'in-progress' || status === 'completed') && (
+    {(status === 'in-progress' || status === 'completed' || status === 'postponed') && (
     <div class="w-full bg-neutral-200 rounded-full h-2">
       <div class={`${statusColors[status]} h-2 rounded-full`} style={`width: ${status === 'completed' ? '100' : progress}%`}></div>
     </div>
