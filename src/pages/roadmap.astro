@@ -17,33 +17,20 @@ import RoadmapCard from "@components/roadmap-card.astro";
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 my-24 gap-x-10 gap-y-24">
 
-      <RoadmapCard
-        quarter="Q2 2025"
-        status="in-progress"
-        title="Build MVP on Celo L2"
-        description="Build a new MVP (contracts, API, frontend, pricing, etc) & deploy on Celo Alfajores."
-        progress={90}
-      />
 
       <RoadmapCard
         quarter="Q2 2025"
-        status="planned"
+        status="in-progress"
         title="Get Public Feedback on MVP"
         description="Do detailed UX testing with 20+ community traders and identify action items."
         progress={10}
       />
 
-      <RoadmapCard
-        quarter="Q2 2025"
-        status="planned"
-        title="Deploy to Celo L2 Mainnet"
-        description="Deploy a public alpha to Celo mainnet with a 100 USDC trade limit."
-        progress={10}
-      />
+
 
       <RoadmapCard
         quarter="Q3 2025"
-        status="planned"
+        status="in-progress"
         title="Add Post-MVP Features"
         description="Add payment methods, chat, better pricing, more notifs, leg2, Self Protocol integration and fixes."
         progress={10}
@@ -98,6 +85,29 @@ import RoadmapCard from "@components/roadmap-card.astro";
         title="Smart Contract Audit"
         description="Have the smart contracts audited at a reasonable price."
       />
+    </div>
+
+    <div class="mt-32 mb-24">
+      <h2 class="text-3xl font-bold text-center mb-16">Completed Items</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24">
+
+      <RoadmapCard
+        quarter="Q2 2025"
+        status="completed"
+        title="Build MVP on Celo L2"
+        description="Build a new MVP (contracts, API, frontend, pricing) & deploy on Alfajores."
+        progress={100}
+      />
+
+      <RoadmapCard
+        quarter="Q2 2025"
+        status="completed"
+        title="Deploy to Celo L2 Mainnet"
+        description="Deploy a public beta to Celo mainnet with a 100 USDC trade limit."
+        progress={100}
+      />
+
+      </div>
     </div>
 
     <!-- Postponed Items Section -->
