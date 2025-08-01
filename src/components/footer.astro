@@ -1,6 +1,8 @@
 ---
 import Container from "@components/container.astro";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import SolanaLogo from "../assets/solana.svg";
 
 const { margin } = Astro.props;
 
@@ -45,7 +47,7 @@ const footermenu = {
           >
           <span
             class="uppercase mt-0.5 leading-none text-[10px] ml-1 font-bold bg-neutral-200 text-neutral-700 px-2 py-1 rounded-md"
-            >Mainnet Beta</span
+            >MVP Soon</span
           >
         </a>
         <p class="mt-4 text-sm text-neutral-700 max-w-xs">
@@ -131,6 +133,16 @@ const footermenu = {
         Copyright © 2023-{new Date().getFullYear()}. A <a target="_blank" href="https://panmoni.com">Panmoni</a> project.
       </p>
       <p class="text-center text-sm text-netural-600 [text-wrap:balance] mt-2"><a href="mailto:hello@yapbay.com">hello@yapbay.com</a></p>
+      <p class="text-center text-sm text-neutral-600 mt-4">
+        Powered by<br />
+        <Picture
+          formats={["avif", "webp"]}
+          src={SolanaLogo}
+          alt="Solana Logo"
+          class="w-48 max-w-md mx-auto mt-2 mb-4"
+          loading="lazy"
+        />
+      </p>
       <p class="text-center text-xs text-neutral-600 mt-2">
         <a href="/terms" class="hover:text-primary-500"> Terms</a> ・ <a
           href="/privacy"
