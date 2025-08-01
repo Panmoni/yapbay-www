@@ -17,9 +17,16 @@ import RoadmapCard from "@components/roadmap-card.astro";
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 my-24 gap-x-10 gap-y-24">
 
+      <RoadmapCard
+        quarter="Q3 2025"
+        status="in-progress"
+        title="Deploy MVP on Solana Mainnet"
+        description="Make some updates and deploy on Solana mainnet."
+        progress={70}
+      />
 
       <RoadmapCard
-        quarter="Q2 2025"
+        quarter="Q3 2025"
         status="in-progress"
         title="Get Public Feedback on MVP"
         description="Do detailed UX testing with 20+ community traders and identify action items."
@@ -32,7 +39,7 @@ import RoadmapCard from "@components/roadmap-card.astro";
         quarter="Q3 2025"
         status="in-progress"
         title="Add Post-MVP Features"
-        description="Add payment methods, chat, better pricing, more notifs, leg2, Self Protocol integration and fixes."
+        description="Add payment methods, chat, better pricing, more notifs, leg2 and fixes."
         progress={10}
       />
 
@@ -40,7 +47,7 @@ import RoadmapCard from "@components/roadmap-card.astro";
         quarter="Q4 2025"
         status="planned"
         title="Build First 2 Corridors"
-        description="Achieve 100 transactions via a focus on VE and NG thru email, vertical video, WarpCast & X."
+        description="Achieve 100 transactions via a focus on VE and NG thru email, vertical video & X."
         progress={10}
       />
 
