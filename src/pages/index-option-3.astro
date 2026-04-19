@@ -1,0 +1,232 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Badge from "@components/ui/badge.astro";
+import Link from "@components/ui/link.astro";
+import { Picture } from "astro:assets";
+import heroImage from "@assets/hero-screenshot.png";
+import solanaLogo from "@assets/solana.svg";
+---
+
+<Layout footerMargin={false}>
+  <!-- Minimal Hero -->
+  <div class="py-16 md:py-24">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-300 text-secondary-600 text-sm font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-secondary-500 animate-pulse"></span>
+          MVP Live at app.yapbay.com
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight [text-wrap:balance]">
+          Send money home<br class="hidden md:block" /> at a fraction of the cost.
+        </h1>
+
+        <p class="text-lg md:text-xl text-neutral-600 mt-6 max-w-xl mx-auto [text-wrap:pretty]">
+          YapBay is a peer-to-peer remittances protocol on Solana. No bank accounts, no KYC, no custodian. Just fast, cheap transfers to where you need them most.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <Link size="lg" style="primary" href="https://app.yapbay.com" target="_blank" rel="noopener">Try the App</Link>
+          <Link size="lg" style="outline" href="https://github.com/Panmoni/yapbay" target="_blank" rel="noopener">View on GitHub</Link>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Social Proof Strip -->
+  <div class="border-y border-neutral-200 py-10">
+    <Container>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-primary-600">~$0</div>
+          <p class="text-sm text-neutral-500 mt-1">Protocol fees</p>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-primary-600">~10,000</div>
+          <p class="text-sm text-neutral-500 mt-1">People onboarded</p>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-primary-600">0</div>
+          <p class="text-sm text-neutral-500 mt-1">KYC required</p>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-primary-600">MIT</div>
+          <p class="text-sm text-neutral-500 mt-1">Open source license</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- How It Works - Clean 3 Step -->
+  <div class="py-20">
+    <Container>
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <Badge color="primary">HOW IT WORKS</Badge>
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight mt-4">
+          Three steps. No custody.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-100 text-primary-600 font-bold text-xl flex items-center justify-center mx-auto">1</div>
+          <h3 class="font-semibold text-neutral-900 mt-4">Choose an offer</h3>
+          <p class="text-sm text-neutral-600 mt-2">Browse P2P offers from traders in your corridor. Each offer shows the exchange rate and fees.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-100 text-primary-600 font-bold text-xl flex items-center justify-center mx-auto">2</div>
+          <h3 class="font-semibold text-neutral-900 mt-4">Deposit stablecoin</h3>
+          <p class="text-sm text-neutral-600 mt-2">Send USDC to the smart contract escrow. Your funds are locked by code, not a company.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-primary-100 text-primary-600 font-bold text-xl flex items-center justify-center mx-auto">3</div>
+          <h3 class="font-semibold text-neutral-900 mt-4">Recipient receives fiat</h3>
+          <p class="text-sm text-neutral-600 mt-2">A second trader delivers local fiat to your recipient. Escrow releases your USDC atomically.</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Trust Pillars - Minimal Grid -->
+  <div class="bg-neutral-100 py-16">
+    <Container>
+      <div class="max-w-2xl mx-auto text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 tracking-tight">
+          Built on trustless infrastructure
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900">Smart contract escrow</h3>
+            <p class="text-sm text-neutral-600 mt-1">Funds held in Rust programs on Solana. No middleman can access them.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900">No identity verification</h3>
+            <p class="text-sm text-neutral-600 mt-1">Protocol-level KYC-free. Your financial activity is your own business.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900">Fully transparent</h3>
+            <p class="text-sm text-neutral-600 mt-1">All code is MIT licensed and publicly auditable. No hidden logic.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900">Censorship resistant</h3>
+            <p class="text-sm text-neutral-600 mt-1">No single entity controls the network. Solana processes thousands of TPS.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Problem Stats -->
+  <div class="py-16">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center md:text-left">
+            <div class="text-4xl font-bold text-primary-600">6.2%</div>
+            <p class="text-sm text-neutral-600 mt-1">Average remittance cost in 2023. The world's most expensive pipes for the poorest people.</p>
+          </div>
+          <div class="text-center md:text-left">
+            <div class="text-4xl font-bold text-primary-600">$3.3B+</div>
+            <p class="text-sm text-neutral-600 mt-1">Annual capital blocked from Africa by TradFi restrictions.</p>
+          </div>
+          <div class="text-center md:text-left">
+            <div class="text-4xl font-bold text-primary-600">1B+</div>
+            <p class="text-sm text-neutral-600 mt-1">People without formal IDs locked out of global financial systems.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Supported By -->
+  <div class="border-t border-neutral-200 py-12">
+    <Container>
+      <p class="text-center text-xs text-neutral-500 uppercase tracking-wider mb-6">Supported by</p>
+      <div class="flex flex-wrap gap-8 md:gap-12 items-center justify-center">
+        <span class="text-sm font-medium text-neutral-600">Solana Foundation</span>
+        <span class="text-sm font-medium text-neutral-600">Gitcoin Grants</span>
+        <span class="text-sm font-medium text-neutral-600">Celo Foundation</span>
+        <span class="text-sm font-medium text-neutral-600">Panmoni</span>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Team -->
+  <div class="py-16">
+    <Container>
+      <div class="max-w-xl mx-auto text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 tracking-tight">
+          The team
+        </h2>
+        <p class="text-neutral-600 mt-2 text-sm">Years of fieldwork. Thousands of people onboarded. One mission.</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-xl font-bold text-primary-600 mx-auto">GD</div>
+          <p class="font-medium text-neutral-900 mt-3">George Donnelly</p>
+          <p class="text-xs text-neutral-500">CTO & Founder</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-secondary-300 flex items-center justify-center text-xl font-bold text-secondary-600 mx-auto">ET</div>
+          <p class="font-medium text-neutral-900 mt-3">Easytrend</p>
+          <p class="text-xs text-neutral-500">Community & Co-Founder</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-xl font-bold text-primary-600 mx-auto">JG</div>
+          <p class="font-medium text-neutral-900 mt-3">Jorge Gallo</p>
+          <p class="text-xs text-neutral-500">COO & Co-Founder</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="bg-neutral-900 py-16">
+    <Container>
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+          Start using YapBay today
+        </h2>
+        <p class="text-neutral-400 mt-3">Join the Telegram community to get early access and help shape the protocol.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="https://t.me/Panmoni/288" style="inverted" target="_blank" rel="noopener">Join Telegram</Link>
+          <Link href="https://github.com/Panmoni/yapbay" style="outline" target="_blank" rel="noopener" class="border-neutral-600 text-neutral-300 hover:bg-neutral-800 hover:border-neutral-500">Explore Code</Link>
+        </div>
+      </div>
+    </Container>
+  </div>
+</Layout>
