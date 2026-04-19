@@ -1,18 +1,20 @@
 ---
-import Badge from "@components/ui/badge.astro";
-
 interface Props {
-  color?: Color;
-  size?: string;
-  class?: string;
+	color?: Color;
+	size?: string;
+	class?: string;
 }
 
-const { color = "DEFAULT", size = "md", class: className } = Astro.props;
+const {
+	color: _color = "DEFAULT",
+	size: _size = "md",
+	class: _className,
+} = Astro.props;
 
 const colors = {
-  DEFAULT: "bg-neutral-200",
-  primary: "bg-primary-100",
-  secondary: "bg-secondary-300",
+	DEFAULT: "bg-neutral-200",
+	primary: "bg-primary-100",
+	secondary: "bg-secondary-300",
 };
 type Color = keyof typeof colors;
 ---

@@ -1,30 +1,26 @@
 ---
-import { ClientRouter } from "astro:transitions";
-import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
-// @ts-ignore
-import '@fontsource-variable/red-hat-text';
+// @ts-expect-error
+import "@fontsource-variable/red-hat-text";
 import "../styles/colors.css";
 import "../styles/color-utilities.css";
 
 interface Props {
-  title?: string;
-  footerMargin?: boolean;
+	title?: string;
+	footerMargin?: boolean;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const _canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.png",
-  Astro.site
+const _resolvedImageWithDomain = new URL(
+	"/opengraph.png",
+	Astro.site,
 ).toString();
 
-const { title, footerMargin = true } = Astro.props;
+const { title, footerMargin: _footerMargin = true } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "YapBay P2P Remittances"
-  : "YapBay: P2P Remittances for the Global South";
+const _makeTitle = title
+	? `${title} | YapBay P2P Remittances`
+	: "YapBay: P2P Remittances for the Global South";
 ---
 
 <!doctype html>

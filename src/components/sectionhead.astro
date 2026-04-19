@@ -1,6 +1,5 @@
 ---
-import Badge from "@components/ui/badge.astro";
-const { align = "center" } = Astro.props;
+const { align: _align = "center" } = Astro.props;
 ---
 
 <div class:list={["mt-16", align === "center" && "text-center"]}>
