@@ -6,7 +6,12 @@ import SolanaLogo from "../assets/solana.svg";
 
 const { margin } = Astro.props;
 
-const footermenu = {
+interface MenuItem {
+  title: string;
+  path: string;
+}
+
+const footermenu: { company: MenuItem[]; product: MenuItem[]; resources: MenuItem[] } = {
   company: [
     {
       title: "About",
@@ -27,9 +32,7 @@ const footermenu = {
       path: "/roadmap",
     },
   ],
-  resources: [
-
-  ],
+  resources: [],
 };
 ---
 
