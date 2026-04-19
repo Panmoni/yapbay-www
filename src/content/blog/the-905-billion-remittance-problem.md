@@ -54,7 +54,7 @@ The World Bank's data has another uncomfortable pattern: **smaller transfers cos
 
 The Q1 2025 global average for sending $500 was **4.26%**, while sending $200 averaged 6.49% in the same quarter ([Srinivasan, Mahadevan & Saxena, 2025, Table 1](https://www.resbank.co.za/content/dam/sarb/what-we-do/payments-and-settlements/cross-border-payments-conference/documents/paper-cost-patterns-remittance.pdf)). That spread isn't because small transfers are economically harder to process — it's because flat-fee components (typically $5–15) hit small amounts disproportionately. A $10 fee on a $200 transfer is 5%. On a $1,000 transfer, it's 1%.
 
-This is why at YapBay we focus obsessively on the sub-$200 segment. A construction worker in Dubai sending $150 home every two weeks to her family in Nairobi is the real user. Not the banker wiring $50,000 to London.
+This is why at YapBay we focus obsessively on the sub-$200 segment. A construction worker in Dubai sending $150 home every two weeks to her family in Nairobi is the real user. Not the banker wiring $50,000 to London. Not the Bitcoin billionaire bragging about moving his billions on-chain for under twenty bucks.
 
 ## Banks Are the Worst. Digital Is the Best. Nobody Uses the Best.
 
@@ -127,21 +127,21 @@ If you've read the other posts on this blog, you know the YapBay thesis. But it'
 
 2. **Stablecoins handle the cross-border leg for pennies.** The expensive part of a remittance is the fiat-to-fiat conversion and the bank-to-bank settlement. Stablecoins route around both.
 
-3. **Combo remittances let anyone serve as a liquidity provider.** Someone in Nairobi who wants dollars can buy them from someone in Dubai who wants shillings. No correspondent bank needed.
+3. **Combo remittances skip the cash-out entirely.** Instead of sending money that the recipient then has to convert and spend, the sender pays for groceries, medicine, or other essentials that get delivered directly to their family in-country. One transaction, no off-ramp — we piloted this between Madrid and Caracas in 2019 and it worked.
 
 4. **1% fee, not 6.36%.** Our planned 1% fee ([see our fees post](https://yapbay.com/blog/)) is less than one-sixth the global average, and every cent goes back into the community treasury and referral rewards rather than to shareholders.
 
-5. **No bank account required.** If you have a phone and a contact willing to trade with you, you can send and receive value. That matters for the 800 million people the formal system has left out entirely.
+5. **No bank account required.** All you need is a wallet and a counterparty willing to trade with you. That matters for the 800 million people the formal system has left out entirely.
 
 The technology to fix this has existed for years. What's been missing is a platform that makes peer-to-peer, combo-route, stablecoin-settled remittances actually usable by someone who isn't a crypto native. That's what we're building.
 
 ## What You Can Do
 
-- **If you remit:** Join our [Telegram](https://t.me/yapbay) and try the MVP when combo remittances go live. We're actively looking for feedback from real senders in real corridors.
-- **If you build:** Our [escrow contracts are open source](https://github.com/Panmoni) and on Celo Mainnet. Fork, integrate, contribute.
+- **If you remit:** Join our [Telegram](https://t.me/yapbay) and try the MVP. We're actively looking for feedback from real senders in real corridors.
+- **If you build:** Our [code is open source](https://github.com/Panmoni/yapbay). Fork, integrate, contribute.
 - **If you research or advocate:** The World Bank's [Remittance Prices Worldwide](https://remittanceprices.worldbank.org/) database is a public good. Cite it, use it, pressure your governments with it.
 
-We'll publish an updated scorecard every six months tracking the global average, the worst corridors, and whether the SDG 10.c gap is closing. Spoiler: it probably isn't. But it should be. And if the incumbents won't make it happen, we will.
+The numbers above aren't going to move on their own. Fifteen years of "fees are coming down" has produced a global average still stuck above 6% and a Sub-Saharan Africa average above 8%. If the incumbents won't make it happen, we will.
 
 ---
 
