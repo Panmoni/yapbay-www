@@ -27,3 +27,4 @@ pnpm-debug.log*
 cline_docs/
 
 list_of_repos.txt
+.claude/
