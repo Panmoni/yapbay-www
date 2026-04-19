@@ -33,9 +33,9 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@fontsource-variable/red-hat-text": "^5.2.5",
-    "@tailwindcss/typography": "^0.5.10",
-    "sharp": "^0.33.2"
+    "@fontsource-variable/red-hat-text": "^5.2.8",
+    "@tailwindcss/typography": "^0.5.19",
+    "sharp": "^0.33.5"
   },
   "pnpm": {
     "overrides": {
