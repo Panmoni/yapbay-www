@@ -1,557 +1,491 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
+import Badge from "@components/ui/badge.astro";
 import Link from "@components/ui/link.astro";
-import About1 from "../assets/about/about1.jpg";
-import About2 from "../assets/about/about2.jpg";
-import Deck from "../assets/about/deck.png";
-import Solution from "../assets/about/solution.svg";
-import Impact from "../assets/about/impact.svg";
-import Vision from "../assets/about/vision.svg";
 import { Icon } from "astro-icon/components";
-import Cta from "@components/cta.astro";
 
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+const team = [
+  {
+    name: "George Donnelly",
+    role: "CTO & Founder",
+    location: "🇺🇸 🇨🇴",
+    image: "https://static.georgedonnelly.com/georgedonnelly.jpg",
+    links: { github: "https://github.com/georgedonnelly", twitter: "https://x.com/georgedonnelly_" },
+    bio: "Bitcoin since 2011. Taught thousands of people across Latam the basics of Bitcoin. Dev with experience in P2P and regulated fintech. 2x Honorable Mention @ Colosseum hackathons.",
+  },
+  {
+    name: "Easytrend",
+    role: "Community & Co-Founder",
+    location: "🇳🇬",
+    image: "https://static.panmoni.com/yb/easytrend.jpg",
+    links: { github: "", twitter: "" },
+    bio: "Solana Superteam Nigeria community leader.",
+  },
+  {
+    name: "Jorge Gallo",
+    role: "COO & Co-Founder",
+    location: "🇨🇴 🇨🇦",
+    image: "https://static.panmoni.com/yb/mystery.png",
+    links: { github: "", twitter: "" },
+    bio: "On-chain data wizard.",
+  },
+];
+
+const projects = [
+  {
+    name: "LocalSolana (2021-2022)",
+    description: "A proof-of-concept P2P trading interface on Solana. Showed that non-crypto-native users could navigate a trading interface if the UX was simple enough.",
+  },
+  {
+    name: "YapBay on Celo (2024-2025)",
+    description: "Built YapBay MVP on Celo with Solidity contracts. Deployed to Alfajores testnet and then Celo mainnet with a 100 USDC trade limit to test with real money. Learned a lot about what breaks in production.",
+  },
+  {
+    name: "YapBay V3 (current)",
+    description: "Multi-chain from the start. Better UX, trust features, and designed for real corridors. All contracts and frontend are MIT licensed on GitHub.",
+  },
+];
 ---
 
 <Layout title="About" footerMargin={false}>
-  <Container>
-    <Sectionhead>
-      <Fragment slot="badge">ABOUT YAPBAY</Fragment>
-      <Fragment slot="title">Building Financial Freedom</Fragment>
-      <Fragment slot="desc">
-        YapBay is a Web3 P2P remittances network that enables remittance senders to chain together P2P crypto trades over stablecoin rails, bypassing TradFi limits, to disrupt the legacy remittances industry. Censorship-resistant and KYC-free, YapBay fosters financial inclusion for the world's 2 billion unbanked and underbanked.
-      </Fragment>
-    </Sectionhead>
-    <div class="mt-6 text-center">
-      <Link style="outline" size="sm" href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank" rel="noopener">
-        See the YapBay deck →
-      </Link>
-    </div>
-
-    
-    <!-- <div class="mt-16 border-y py-6 border-neutral-100">
-      <Logos />
-    </div> -->
-
-    <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
-      <div class="relative">
-        <div
-          class="absolute hidden md:block w-96 h-96 bg-secondary-300 rounded-full right-0 top-1/3 -z-10">
+  <!-- Header -->
+  <div class="py-16 md:py-24">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center justify-between">
+          <div>
+            <Badge color="secondary">ABOUT</Badge>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 tracking-tight mt-4">
+              We started Panmoni to make money work across borders
+            </h1>
+          </div>
+          <img src="/panmoni.svg" alt="Panmoni" class="h-20 md:h-28 ml-8 shrink-0" />
         </div>
-        <div
-          class="absolute hidden md:block w-44 h-44 bg-secondary-300 rounded-full left-10 top-1/4 -z-10">
-        </div>
-        <Picture
-          formats={["avif", "webp"]}
-          src={About1}
-          alt="Happy Team"
-          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="place-self-center">
-        <h2 class="text-5xl text-neutral-800 tracking-tight -mt-2">
-          <span class="text-primary-600">Our</span>
-          {" "}
-          <strong>Mission</strong>
-        </h2>
-        <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
-          Our mission is to facilitate access to cryptocurrency for people across the globe, without the need for onerous KYC procedures or the arbitrary limits and opaque reserve status of centralized exchanges.
-        </p>
-        <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
-          We are building a peer-to-peer crypto exchange that provides anyone, anywhere with uncensorable, KYC-free, transparent and open-source fiat on-ramps and off-ramps.
-        </p>
-        <ul class="grid mt-6 text-left gap-y-4">
-          <li class="flex items-center gap-3 text-neutral-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-neutral-600">Financial Inclusion</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-neutral-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-neutral-600">Affordable Remittances</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-neutral-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-neutral-600">Censorship Resistance</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-neutral-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-neutral-600">Crisis Resilience</span>
-          </li>
-
-          <li class="flex items-center gap-3 text-neutral-800">
-            <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-
-            <span class="text-neutral-600">Economic Empowerment</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Problem Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        The <span class="text-primary-600 font-bold">Problem</span>
-      </h2>
-      <div class="mt-6 space-y-6 text-neutral-600">
-        <p class="text-lg">
-          <span class="font-semibold">Expensive Fees</span>: Sub-$200 remittances face high fixed fees, disproportionately affecting smaller transfers to regions like Africa, Southeast Asia and Latin America. Some corridors even face exorbitant fees.
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">Economic Barriers</span>: These fees hinder families from accessing basic needs, stifling economic growth and participation in their home countries.
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">Opportunity Limitation</span>: High fees block billions of potential capital flow, preventing economic empowerment, effective capital formation and innovation in developing regions.
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">ID Exclusion</span>: 800 million+ lack official ID, locking them out of formal financial systems. Another 2.8 billion lack digital ID for online transactions. <a href="https://id4d.worldbank.org/global-dataset" target="_blank" rel="noopener" class="text-primary-600 hover:underline">Source: World Bank ID4D Global Dataset, 2025</a>
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">Crisis Fragility</span>: Power outages and unreliable networks cripple remittance access during emergencies, leaving families stranded or at the mercy of predatory providers. 
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">Global Inequality</span>: At 6.36%, remittance costs in Q2 2025 remain far above the World Bank’s 3% SDG target — more than double what it should be. <a href="https://remittanceprices.worldbank.org/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">Source: World Bank Remittance Prices Worldwide</a>
-        </p>
-        <p class="text-lg">
-          <span class="font-semibold">Africa Tax</span>: Sub-Saharan Africa averaged 8.78% to send $200 in Q1 2025 — the world’s most expensive corridor, serving some of its poorest recipients. Africans pay roughly $5B/year in remittance fees alone. <a href="https://www.resbank.co.za/content/dam/sarb/what-we-do/payments-and-settlements/cross-border-payments-conference/documents/paper-cost-patterns-remittance.pdf" target="_blank" rel="noopener" class="text-primary-600 hover:underline">Source: SARB/World Bank RPW Q1 2025</a>
+        <p class="text-lg text-neutral-600 mt-6 max-w-xl">
+          YapBay is our remittances protocol. Built after years of fieldwork, one successful pilot, and a lot of learning. No VC funding. No empty promises. Just code and community.
         </p>
       </div>
-    </div>
+    </Container>
+  </div>
 
-
-
-    <!-- Solution Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Solution</span>
-      </h2>
-      <div class="mt-6 space-y-6 text-neutral-600">
-        <p class="text-lg">
-          YapBay is a LocalBitcoins where remittance senders chain together 2 peer-to-peer trade offers into 1 fiat-in, fiat-out remittance transaction. Behind the scenes, P2P traders use stablecoins as a fast, hassle-free and low-cost transport layer. Remittance senders and receivers use their preferred fiat currencies and avoid any need for immediate onboarding, technical knowledge or exposure to volatility.
-        </p>
-        <p class="text-lg">
-          Remittance senders can also buy basic necessities, such as groceries and medicines, from merchants that are local to their remittance recipients. Often, merchants can deliver these products to the recipients' homes. We call these "combo remittances".
-        </p>
-      </div>
-    </div>
-
-    <!-- Solution illustration -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <Picture
-            formats={["avif", "webp"]}
-            src={Solution}
-            alt="YapBay Solution"
-            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
-            loading="lazy"
-          />
-    </div>
-
-    <!-- Impact Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Impact</span>
-      </h2>
-      <div class="mt-6 space-y-6 text-neutral-600">
-        <p class="text-lg">
-          YapBay has the potential to significantly reduce the cost of remittances for millions of people in developing countries, enabling them to send and receive more money to support their families and communities. By driving the adoption of cryptocurrency as a medium of exchange, the project also contributes to the broader goal of financial inclusion and economic empowerment.
-        </p>
-        <p class="text-lg">
-          YapBay addresses the clear need for more accessible, affordable and efficient remittance services in the global financial ecosystem. By leveraging open-source technologies and decentralized infrastructure, YapBay aims to fill the gap in serving the world's unbanked and underbanked population, who are currently underserved by traditional remittance providers due to high fees, limited access and slow transactions.
-        </p>
-        <p class="text-lg">
-          YapBay's impact can extend beyond the direct remittance market. By driving the adoption of cryptocurrency as a medium of exchange and empowering individuals to participate in the global economy on their own terms, YapBay can help unlock trillions of dollars in pent-up capital and stimulate economic growth in underserved regions.
-        </p>
-      </div>
-    </div>
-
-    <!-- Impact illustration -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <Picture
-            formats={["avif", "webp"]}
-            src={Impact}
-            alt="YapBay Impact"
-            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
-            loading="lazy"
-          />
-    </div>
-
-    <!-- Unique Value Section -->
-    <div class="grid sm:grid-cols-2 gap-10 mx-auto mt-24">
-      <div class="place-self-center">
-        <h2 class="text-5xl text-neutral-800 tracking-tight -mt-2">
-          <span class="text-primary-600">Unique</span>
-          {" "}
-          <strong>Value</strong>
-        </h2>
-        <p class="text-lg max-w-xl mt-4 leading-relaxed text-neutral-500">
-          YapBay has a few characteristics that set it apart from other remittance solutions in the market.
-        </p>
-
-        <ul class="grid mt-6 text-left gap-y-4">
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Focus on sub-$200 remittances</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Smart-contract-based</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Innovative, trustless sequential escrow</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">No protocol-level KYC/AML</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Lower fees and faster than TradFi</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Acceptance of users who lack sufficient formal identification</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Combo remittances</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">Based on 4 years of Latam fieldwork</span>
-        </li>
-
-        <li class="flex items-center gap-3 text-neutral-800">
-          <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-          <span class="text-neutral-600">We see the developing world as a business opportunity, not a charity</span>
-        </li>
-
-        </ul>
-      </div>
-
-
-
-      
-      <div class="relative">
-        <div
-          class="absolute hidden md:block w-96 h-96 bg-secondary-300 rounded-full left-0 top-1/3 -z-10">
-        </div>
-        <div
-          class="absolute hidden md:block w-44 h-44 bg-secondary-300 rounded-full right-10 top-1/4 -z-10">
-        </div>
-        <Picture
-          formats={["avif", "webp"]}
-          src={About2}
-          alt="YapBay Unique Value"
-          class="rounded-xl w-full max-w-md mx-auto shadow-2xl"
-          loading="lazy"
-        />
-      </div>
-    </div>
-
-    <!-- Progress Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Progress</span>
-      </h2>
-      <div class="mt-6 space-y-6 text-neutral-600">
-        <p class="text-lg">
-          YapBay is at a pre-seed stage and the development of a Solana mainnet MVP should be complete before the end of Q3 2025.
-        </p>
-        <p class="text-lg">
-          From 2018 to 2021, I and my teams performed extensive fieldwork in Latin America educating new crypto users and learning what they want. We did a remittances pilot between Madrid and Caracas in 2019, which was quite popular among Venezuelans in Spain, particular with the combo remittances network we set up across Venezuela. This project benefits from the contact information of about 10,000 people onboarded to crypto during our fieldwork.
-        </p>
-
-        <p class="text-lg">
-          We're currently building new communities, with a particular focus on Nigeria and Venezuela.
-        </p>
-      </div>
-    </div>
-
-    <!-- Deck Section -->
-    <div class="mt-24 max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight">
-        YapBay <span class="text-primary-600 font-bold">Deck</span>
-      </h2>
-      <p class="text-lg mt-6 text-neutral-600 mb-8">
-        <a href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank" class="text-primary-600 hover:underline inline-flex items-center gap-1">
-          Download the current YapBay deck <Icon name="ph:arrow-right" class="w-5 h-5" />
-        </a>
-      </p>
-      <div class="max-w-2xl mx-auto overflow-hidden">
-        <a href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank">
-          <Picture
-          formats={["avif", "webp"]}
-          src={Deck}
-          alt="The YapBay Deck"
-          class="rounded-xl w-full max-w-2xl mx-auto shadow-2xl"
-          loading="lazy"
-        />
-        </a>
-      </div>
-    </div>
-
-        <!-- Public Goods Section -->
-        <div class="mt-24 max-w-4xl mx-auto">
-          <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-            Our <span class="text-primary-600 font-bold">Accountability</span>
-          </h2>
-          <div class="mt-6 space-y-6 text-neutral-600">
-            <p class="text-lg">
-              YapBay ideally aims to sustain itself as a public good in order to better serve our vision. Towards that end, we participate in public goods funding programs and the accountability that naturally accompanies them.
+  <!-- The origin story -->
+  <div class="py-16 border-t border-neutral-200">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="grid md:grid-cols-5 gap-10">
+          <div class="md:col-span-2">
+            <h2 class="text-2xl font-bold text-neutral-900 mb-4">The origin story</h2>
+            <p class="text-neutral-600 leading-relaxed">
+              It started in 2018 in Latin America. We were teaching people to use simple crypto wallets. Most weren't interested in speculation — they just wanted to send money home.
             </p>
-
-            <ul class="grid mt-6 text-left gap-y-4">
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://gap.karmahq.xyz/project/yapbay-p2p-stablecoin-remittances" target="_blank">Karma GAP</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://builder.gitcoin.co/#/chains/42161/registry/0x/projects/0x5392326450ab92f263ce23af5fe0e136e6f2a04efe80e3b669d10bb3581b9e50" target="_blank">Gitcoin Builder</a></span>
-              </li>
-
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://giveth.io/project/yapbay-p2p-stablecoin-remittances-for-the-global-south" target="_blank">Giveth</a></span>
-              </li>
-
-            </ul>
-
-            <p class="text-lg">
-              All of our code is, and will remain, open-source under the MIT license. Further, we aim to be community-led and community-governed in order to be fully responsive to the needs of our userbase. Here is a list of code repositories.
+          </div>
+          <div class="md:col-span-3 space-y-4 text-neutral-600 leading-relaxed">
+            <p>
+              The existing options were expensive, slow, and unreliable. Banks charged too much. Western Union was worse. Even crypto on-ramps were confusing and unreliable. Meanwhile, almost everyone had a phone.
             </p>
+            <p>
+              In 2019 we ran a remittances pilot between Madrid and Caracas. Venezuelan immigrants in Spain wanted to send money home for food. We invented combo remittances — their funds paid for groceries directly, cross-border with Dash, through a network of local stores. It worked — real people used it, real money moved.
+            </p>
+            <p>
+              But it was fragile. It depended on trust, on specific people being available, on manual coordination. When the pandemic hit, the logistics collapsed. The lesson was clear: you can't build durable financial infrastructure on goodwill alone.
+            </p>
+            <p>
+              So we built YapBay. The workflow, the trust problems, the edge cases — all of it translated into code. Smart contracts hold funds. P2P matching replaces manual coordination. No middleman.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
 
-            <ul class="grid mt-6 text-left gap-y-4">
+  <!-- Problem & Solution — The Stats -->
+  <div class="py-16 bg-gradient-to-bl from-primary-900 to-primary-700 text-white">
+    <Container>
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-primary-300 uppercase tracking-wider text-sm font-medium mb-3">The problem is massive</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Remittances are broken</h2>
+          <p class="text-neutral-300 max-w-2xl mx-auto text-lg">
+            Sub-$200 remittances face the highest fees, disproportionately hurting families that need every dollar most.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white/5 backdrop-blur rounded-2xl p-8 text-center border border-white/10">
+            <div class="text-5xl font-bold text-primary-400 mb-4">6.36%</div>
+            <p class="text-white font-medium mb-2">Global average cost</p>
+            <p class="text-neutral-400 text-sm">To send $200 globally (World Bank RPW, Q3 2025). More than double the 3% SDG target.</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-2xl p-8 text-center border border-white/10">
+            <div class="text-5xl font-bold text-primary-400 mb-4">8.78%</div>
+            <p class="text-white font-medium mb-2">Sub-Saharan Africa</p>
+            <p class="text-neutral-400 text-sm">The world's most expensive region (World Bank, Q1 2025).</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-2xl p-8 text-center border border-white/10">
+            <div class="text-5xl font-bold text-primary-400 mb-4">800M+</div>
+            <p class="text-white font-medium mb-2">People locked out</p>
+            <p class="text-neutral-400 text-sm">Without official ID, excluded from formal finance. Another 2.8B lack digital ID.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
 
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay" target="_blank">yapbay (primary repo)</a></span>
-              </li>
+  <!-- Problem vs Solution -->
+  <div class="py-16 border-t border-neutral-200">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-bold text-neutral-900">The hidden cost of every transfer</h2>
+          <p class="text-neutral-500 mt-2 max-w-lg mx-auto">Traditional remittances vs YapBay</p>
+        </div>
+        <div class="space-y-6">
+          <!-- Fees -->
+          <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-6 bg-red-50 border-b md:border-b-0 md:border-r border-red-100">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">💸</span>
+                  </div>
+                  <div>
+                    <p class="text-red-600 text-xs font-medium uppercase tracking-wider mb-1">Traditional</p>
+                    <h3 class="font-semibold text-neutral-900">Fees stack on fees</h3>
+                    <p class="text-neutral-600 text-sm mt-2">Fixed transfer fees plus exchange rate markups. The "zero fee" ads hide the spread.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-6 bg-green-50">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <p class="text-green-600 text-xs font-medium uppercase tracking-wider mb-1">YapBay</p>
+                    <h3 class="font-semibold text-neutral-900">Near-zero fees</h3>
+                    <p class="text-neutral-600 text-sm mt-2">No YapBay fees (for now). You pay gas + the trader's spread. That's it.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ID -->
+          <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-6 bg-red-50 border-b md:border-b-0 md:border-r border-red-100">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">🪪</span>
+                  </div>
+                  <div>
+                    <p class="text-red-600 text-xs font-medium uppercase tracking-wider mb-1">Traditional</p>
+                    <h3 class="font-semibold text-neutral-900">ID requirements lock people out</h3>
+                    <p class="text-neutral-600 text-sm mt-2">800 million people lack formal ID. Even for those who have it, KYC is slow and intrusive.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-6 bg-green-50">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">📱</span>
+                  </div>
+                  <div>
+                    <p class="text-green-600 text-xs font-medium uppercase tracking-wider mb-1">YapBay</p>
+                    <h3 class="font-semibold text-neutral-900">Just a wallet</h3>
+                    <p class="text-neutral-600 text-sm mt-2">No KYC at the protocol level. No identity data stored — nothing to leak.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Speed -->
+          <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-6 bg-red-50 border-b md:border-b-0 md:border-r border-red-100">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">⏰</span>
+                  </div>
+                  <div>
+                    <p class="text-red-600 text-xs font-medium uppercase tracking-wider mb-1">Traditional</p>
+                    <h3 class="font-semibold text-neutral-900">Speed is unreliable</h3>
+                    <p class="text-neutral-600 text-sm mt-2">Days for a wire. Business hours only. Holidays off. Power outages freeze transfers.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-6 bg-green-50">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">🌍</span>
+                  </div>
+                  <div>
+                    <p class="text-green-600 text-xs font-medium uppercase tracking-wider mb-1">YapBay</p>
+                    <h3 class="font-semibold text-neutral-900">Works in crisis</h3>
+                    <p class="text-neutral-600 text-sm mt-2">P2P networks don't go down when banks do. As long as your phone works.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Frozen -->
+          <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-6 bg-red-50 border-b md:border-b-0 md:border-r border-red-100">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">🛡️</span>
+                  </div>
+                  <div>
+                    <p class="text-red-600 text-xs font-medium uppercase tracking-wider mb-1">Traditional</p>
+                    <h3 class="font-semibold text-neutral-900">Your account can be frozen</h3>
+                    <p class="text-neutral-600 text-sm mt-2">Banks can freeze funds, reverse transactions, or block transfers anytime.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-6 bg-green-50">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">🔐</span>
+                  </div>
+                  <div>
+                    <p class="text-green-600 text-xs font-medium uppercase tracking-wider mb-1">YapBay</p>
+                    <h3 class="font-semibold text-neutral-900">Smart contract escrow</h3>
+                    <p class="text-neutral-600 text-sm mt-2">Funds locked until both confirm. No middleman can freeze or reverse.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Combo -->
+          <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-6 bg-neutral-50 border-b md:border-b-0 md:border-r border-neutral-200">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-neutral-200 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">💸</span>
+                  </div>
+                  <div>
+                    <p class="text-neutral-500 text-xs font-medium uppercase tracking-wider mb-1">Bonus</p>
+                    <h3 class="font-semibold text-neutral-900">Combo remittances</h3>
+                    <p class="text-neutral-600 text-sm mt-2">Send money AND buy groceries, medicine, or essentials for your recipient.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-6 bg-green-50">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                    <span class="text-xl">🛒</span>
+                  </div>
+                  <div>
+                    <p class="text-green-600 text-xs font-medium uppercase tracking-wider mb-1">YapBay</p>
+                    <h3 class="font-semibold text-neutral-900">One transaction</h3>
+                    <p class="text-neutral-600 text-sm mt-2">All delivered locally. All in one transaction.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
 
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/localsolana-contracts" target="_blank">localsolana-contracts (Rust program)</a></span>
-              </li>
+  <!-- How YapBay works technically -->
+  <div class="py-20 bg-gradient-to-bl from-primary-900 to-primary-700 text-white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-primary-300 uppercase tracking-wider text-sm font-medium mb-3">How it works</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Sequential P2P escrow</h2>
+          <p class="text-neutral-300 max-w-2xl mx-auto text-lg">
+            YapBay chains two P2P trades into one fiat-in, fiat-out transaction. No middleman. No custody. Just smart contracts doing the work.
+          </p>
+        </div>
 
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-api" target="_blank">yapbay-api</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/pricing" target="_blank">pricing</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-www" target="_blank">yapbay-www (this website)</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-contracts-solidity" target="_blank">yapbay-contracts-solidity (Solidity contract)</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-contracts-sui" target="_blank">yapbay-contracts-sui (Move program)</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-contracts" target="_blank">yapbay-contracts (gen1 Solidity contracts, obsolete for now)</a></span>
-              </li>
-
-              <li class="flex items-center gap-3 text-neutral-800">
-                <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-                <span class="text-neutral-600"><a class="text-primary-600 hover:underline inline-flex items-center gap-1" href="https://github.com/Panmoni/yapbay-litepaper" target="_blank">yapbay-litepaper (update coming soon)</a></span>
-              </li>
-
-            </ul>
+        <!-- Flow visualization -->
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-8 mb-10 border border-white/10">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-center">
+              <div class="w-14 h-14 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl">📱</span>
+              </div>
+              <p class="text-sm font-medium">Pick offer 1</p>
+              <p class="text-xs text-neutral-400">Buy crypto with fiat</p>
+            </div>
+            <div class="hidden md:block text-primary-400 text-xl">→</div>
+            <div class="hidden md:block text-neutral-600">—</div>
+            <div class="text-center">
+              <div class="w-14 h-14 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl">💵</span>
+              </div>
+              <p class="text-sm font-medium">Pay fiat</p>
+              <p class="text-xs text-neutral-400">Get stablecoin</p>
+            </div>
+            <div class="hidden md:block text-neutral-600">—</div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-primary-400 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-primary-400/30">
+                <span class="text-3xl">🔐</span>
+              </div>
+              <p class="text-base font-bold text-white">Sequential escrow</p>
+              <p class="text-xs text-neutral-400 mt-1">Auto-transfers between legs</p>
+            </div>
+            <div class="hidden md:block text-neutral-600">—</div>
+            <div class="text-center">
+              <div class="w-14 h-14 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl">📱</span>
+              </div>
+              <p class="text-sm font-medium">Pick offer 2</p>
+              <p class="text-xs text-neutral-400">Sell crypto for local fiat</p>
+            </div>
+            <div class="hidden md:block text-primary-400 text-xl">→</div>
+            <div class="hidden md:block text-neutral-600">—</div>
+            <div class="text-center">
+              <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span class="text-xl">🤝</span>
+              </div>
+              <p class="text-sm font-medium leading-tight">Recipient gets</p>
+              <p class="text-sm font-medium leading-tight">local fiat</p>
+            </div>
           </div>
         </div>
 
-    <!-- Vision Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Vision</span>
-      </h2>
-      
-      <p class="text-lg mt-6 text-neutral-600">
-        We envision a world of universal prosperity, where every human being has the opportunity to realize their potential. A world where everyone, everywhere, enjoys monetary freedom and can use and create money as they see fit, trading it on a voluntary basis across borders, from anywhere to anywhere and from anyone to anyone. We strive for a world of crypto mass adoption, where everyone has access to prosperity and no one is cut out of the system or left behind.
-      </p>
-    </div>
+        <!-- Legs explanation -->
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+              <h3 class="font-bold text-lg">Leg 1</h3>
+            </div>
+            <p class="text-neutral-300 text-sm leading-relaxed">
+              You find an offer. You pay fiat (e.g., USD) to a trader — they give you stablecoin (e.g., USDC). That stablecoin goes into the smart contract escrow. The escrow holds the funds.
+            </p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-sm font-bold">2</div>
+              <h3 class="font-bold text-lg">Leg 2</h3>
+            </div>
+            <p class="text-neutral-300 text-sm leading-relaxed">
+              Your stablecoin is automatically escrowed into Leg 2. Another trader buys your stablecoin and delivers local fiat to your recipient. The escrow transfers automatically — no extra steps.
+            </p>
+          </div>
+        </div>
 
+        <p class="text-center text-neutral-400 text-sm mb-10">
+          Neither sender nor receiver need touch crypto if they don't feel comfortable with it. Traders handle the local fiat side. You just pick your offers, pay in fiat, and recipients get cash deposited.
+        </p>
 
-    <!-- Vision illustration -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <Picture
-            formats={["avif", "webp"]}
-            src={Vision}
-            alt="YapBay Vision"
-            class="rounded-xl w-full max-w-4xl mx-auto shadow-2xl"
-            loading="lazy"
-          />
-    </div>
+        <!-- Key features -->
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="bg-white/5 backdrop-blur rounded-xl p-5 text-center border border-white/10">
+            <div class="text-3xl mb-3">🔐</div>
+            <h3 class="font-bold text-sm mb-2">Smart contract</h3>
+            <p class="text-neutral-400 text-xs">Funds locked until both parties confirm. No one can freeze them.</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-xl p-5 text-center border border-white/10">
+            <div class="text-3xl mb-3">🌍</div>
+            <h3 class="font-bold text-sm mb-2">Traders</h3>
+            <p class="text-neutral-400 text-xs">Independent operators set their own rates in specific corridors.</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-xl p-5 text-center border border-white/10">
+            <div class="text-3xl mb-3">⚖️</div>
+            <h3 class="font-bold text-sm mb-2">Disputes</h3>
+            <p class="text-neutral-400 text-xs">5% security bond from both parties. Community governance decides.</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur rounded-xl p-5 text-center border border-white/10">
+            <div class="text-3xl mb-3">📱</div>
+            <h3 class="font-bold text-sm mb-2">No KYC</h3>
+            <p class="text-neutral-400 text-xs">The protocol only needs a wallet — no phone number required. Traders choose their own rules.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
 
-    <!-- Fees Section -->
-    <div class="mt-24 max-w-4xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Fees</span>
-      </h2>
-
-      <p class="text-lg mt-6 text-neutral-600">Currently, we charge <strong>zero YapBay fees</strong>. All trades are free of YapBay fees. Your costs are determined by chain transaction fees and whatever exchange rate the offer creator has set.</p>
-
-      <p class="text-lg mt-6 text-neutral-600">There is a 5% bond that both parties must post to create or contest a dispute. And the losing party forfeits this bond. However, this is not a fee per se, but rather a security deposit to ensure both parties are committed to the dispute.</p>
-
-      <p class="text-lg mt-6 text-neutral-600">With that said, we may add a YapBay fee of up to 1% on trades and remittances in the future in order to grow more quickly. Any fee on combo remittances would likely be higher as more work is involved in combo remittances.</p>
-
-      <h3 class="text-2xl text-primary-500 mt-4 font-semibold">Why Fees Matter</h3>
-      <p class="text-lg mt-6 text-neutral-600">YapBay is a public good built for the global south, but keeping it running takes resources. Fees may be needed in the future to fund ongoing development, scaling and new features. We may also find it helpful to fund the development of partners or self-developed dapps that build use cases on top of YapBay.</p>
-      <h3 class="text-2xl text-primary-500 mt-4 font-semibold">Fees Done Right: A Public Good Precedent</h3>
-      <p class="text-lg mt-6 text-neutral-600">Fees don’t mean we’re less open or accessible—they’re a proven way to sustain decentralized systems. Look at Uniswap: it charges trading fees to support its platform while remaining a cornerstone of DeFi.</p> 
-      <p class="text-lg mt-6 text-neutral-600">YapBay’s fees would work the same way—sustaining us so we can keep remittances fast, low-cost and KYC-free for all.</p>
-      <h3 class="text-2xl text-primary-500 mt-4 font-semibold">How YapBay Fees Break Down</h3>
-
-      <p class="text-lg mt-6 text-neutral-600">If/when we implement a YapBay fee, we will split the proceeds evenly:  
-
-      <ul class="grid my-6 ml-6 text-left gap-y-4 list-disc text-neutral-600">
-        <li><strong>50% to the Referral Program</strong>: Rewards users who grow our community by bringing in new remittance senders and traders.</li>
-        <li><strong>50% to the Community Treasury</strong>: Funds projects that level up YapBay, chosen by token holders.</li>
-      </ul> 
-
-    <h3 class="text-2xl text-primary-500 mt-4 font-semibold">Community Treasury: Token Holders Call the Shots</h3>
-    <p class="text-lg mt-6 text-neutral-600">Token holders would vote on how treasury funds are spent.  
-
-      <ul class="grid my-6 ml-6 text-left gap-y-4 list-disc text-neutral-600">
-        <li>New features for cheaper, faster, more accessible remittances.</li>
-        <li>Tools and programs to onboard more users in places like Nigeria and Venezuela.</li>
-        <li>Seed funding for partners or self-developed dapps that build use cases on top of YapBay.</li> 
-        <li>Support for YapBay’s growth and development.</li>
-      </ul>
-
-    <p class="text-lg mt-6 text-neutral-600">More tokens, more say—simple as that. And it's likely that, if we do a token, that tokens will be rewarded based on your trade and referral activity. </p>
-    
-    <p class="text-lg mt-6 text-neutral-600">There would likely be a token allocation for the core team. We will endeavor NOT to hold a token sale but to distribute tokens based solely on merit. However, a token sale is a possibility if public goods funding, grants, fee revenue, etc. proves insufficient to fund growth.</p>
-
-    <h3 class="text-2xl text-primary-500 mt-4 font-semibold">Fees Build Impact, Not Profits</h3>
-    <p class="text-lg mt-6 text-neutral-600">We’re not here to cash out. Every fee gets reinvested to cut remittance costs, boost crisis resilience and unlock capital for the global south. It’s about empowering you—senders, receivers, traders, onboarders, educators and builders—with a system that’s affordable, transparent, scalable and unstoppable.</p>
-    </div>
-
-    <!-- Team Section -->
-    <div class="mt-24">
-      <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-        Our <span class="text-primary-600 font-bold">Team</span>
-      </h2>
-      <p class="text-lg mt-4 text-neutral-600 text-center">
-        YapBay is built by these awesome individuals. Seeking visionary builders to join us! Please reach out, share your skillset, your ideas and interests. Let's see if we can find a fit.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-4 gap-10 mx-auto mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry?.data?.avatar?.src}
-                alt={teamMemberEntry?.data?.avatar?.alt || "Team Member"}
+  <!-- Team -->
+  <div class="py-16 border-t border-neutral-200">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-neutral-900 mb-8">The team</h2>
+        <div class="space-y-10">
+          {team.map((member) => (
+            <div class="flex gap-6 items-start">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-20 h-20 rounded-full object-cover shrink-0"
                 loading="lazy"
-                width={400}
-                height={400}
-                formats={["avif", "webp"]}
-                class="w-full h-full object-cover bg-white rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
               />
+              <div>
+                <div class="flex items-center gap-3">
+                  <h3 class="font-bold text-lg text-neutral-900">{member.name}</h3>
+                  <span class="text-lg">{member.location}</span>
+                </div>
+                <p class="text-sm text-primary-600 font-medium mt-0.5">{member.role}</p>
+                <p class="text-neutral-600 mt-2 leading-relaxed">{member.bio}</p>
+              </div>
             </div>
-
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-neutral-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-neutral-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-        <!-- Acknowledgements Section -->
-        <div class="mt-24 max-w-4xl mx-auto">
-          <h2 class="text-4xl lg:text-5xl lg:tracking-tight text-center">
-            Our <span class="text-primary-600 font-bold">Acknowledgments</span>
-          </h2>
-
-          <ul class="grid mt-6 text-left gap-y-4">
-
-          <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              Celo Proof of Ship Seasons 3-4
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              Solana Eternal Hackathon 2025
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              Gitcoin Grants 20 (GG20)
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              Backdrop Build Hackathon v3
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              The BCH community, most notably Mike Komaransky & Georg Engelmann
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              The Dash DAO
-            </li>
-
-            <li class="flex items-center gap-3 text-neutral-800">
-              <Icon name="ph:check-circle-fill" class="w-5 h-5" />
-              Photo by <a href="https://unsplash.com/@paulofelipeassis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Felipe Assis</a> on <a href="https://unsplash.com/photos/woman-in-white-blazer-holding-iphone-CCtHdZ5zvlU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-            </li>
-
-          </ul>
-
-       
+          ))}
         </div>
+      </div>
+    </Container>
+  </div>
 
-    
-  </Container>
-  <Cta />
+  <!-- Open source -->
+  <div class="py-16 bg-gradient-to-bl from-primary-900 to-primary-700 text-white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="text-4xl mb-4">🔗</div>
+        <h2 class="text-2xl font-bold mb-4">Everything is open source</h2>
+        <p class="text-neutral-400 max-w-lg mx-auto leading-relaxed">
+          All YapBay code is MIT licensed. The contracts, the API, the frontend — all public. You can read it, audit it, fork it, build on it.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center mt-8">
+          <a href="https://github.com/Panmoni/yapbay" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition">
+            <Icon name="bx:bxl-github" class="w-5 h-5" />
+            yapbay
+          </a>
+          <a href="https://github.com/Panmoni/yapbay-api" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition">
+            <Icon name="bx:bxl-github" class="w-5 h-5" />
+            yapbay-api
+          </a>
+          <a href="https://github.com/Panmoni/pricing" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition">
+            <Icon name="bx:bxl-github" class="w-5 h-5" />
+            pricing
+          </a>
+          <a href="https://github.com/Panmoni/yapbay-contracts-solidity" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition">
+            <Icon name="bx:bxl-github" class="w-5 h-5" />
+            yapbay-contracts-solidity
+          </a>
+          <a href="https://github.com/Panmoni/yapbay-solana-anchor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition">
+            <Icon name="bx:bxl-github" class="w-5 h-5" />
+            yapbay-solana-anchor
+          </a>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="py-16">
+    <Container>
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-neutral-900 mb-4">Questions, ideas, or just want to talk?</h2>
+        <p class="text-neutral-600 mb-6">
+          We're building in public. Join the Telegram community or reach out directly.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link size="lg" style="primary" href="https://t.me/Panmoni/288" target="_blank" rel="noopener">
+            Join Telegram
+          </Link>
+          <Link size="lg" style="outline" href="/contact">
+            Get in Touch
+          </Link>
+          <Link size="lg" style="outline" href="https://static.panmoni.com/yb/yapbay-deck.pdf" target="_blank" rel="noopener">
+            Read the Deck
+          </Link>
+        </div>
+      </div>
+    </Container>
+  </div>
 </Layout>
