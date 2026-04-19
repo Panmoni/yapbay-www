@@ -14,7 +14,8 @@
 		"astro": "astro",
 		"check": "ultracite check .",
 		"fix": "ultracite fix .",
-		"format": "ultracite format ."
+		"format": "ultracite format .",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.8",
@@ -36,10 +37,12 @@
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.4.12",
 		"@fontsource-variable/red-hat-text": "^5.2.8",
 		"@tailwindcss/typography": "^0.5.19",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.4.0",
 		"sharp": "^0.34.5",
-		"@biomejs/biome": "^2.4.12",
 		"ultracite": "^7.6.0"
 	},
 	"pnpm": {

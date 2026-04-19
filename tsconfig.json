@@ -11,5 +11,6 @@
 			"@assets/*": ["assets/*"],
 			"@pages/*": ["pages/*"]
 		}
-	}
+	},
+	"exclude": ["ultracite.config.ts"]
 }
