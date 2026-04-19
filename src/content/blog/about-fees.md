@@ -53,7 +53,7 @@ Fees can coexist with public goods, as long as they’re used to benefit the com
 ### Challenges: The Fee Debate  
 There’s some debate around fees in public goods. Some argue that public goods should be free, but in reality, sustainability matters. Without fees, decentralized projects may not be able to scale. At YapBay, we’re not just charging a fee, we’re reinvesting it into the ecosystem. Our community governance model will ensure that every cent is used to make YapBay better, more inclusive and more impactful.  
 
-And let’s be real: TradFi charges way more. The global average for remittances is 6.2% (World Bank, 2023). Our 1% fee is a fraction of that and it’s reinvested into the community, not pocketed.
+And let’s be real: TradFi charges way more. The global average cost to send $200 is 6.36% as of Q2 2025 (World Bank Remittance Prices Worldwide) — more than double the UN SDG target of 3%. Our 1% fee is a fraction of that and it’s reinvested into the community, not pocketed. <a href="https://remittanceprices.worldbank.org/" target="_blank" rel="noopener" class="text-primary-600 hover:underline">Source</a>
 
 ## Conclusion: A Small Fee, A Big Impact  
 
@@ -65,9 +65,10 @@ Please join [our Telegram community](https://t.me/Panmoni/288) to offer your fee
 
 ---
 
-### Citations  
-- Uniswap Docs. (2023). [Fees](https://docs.uniswap.org/contracts/v2/concepts/advanced-topics/fees).  
-- World Bank. (2023). [Remittance Prices Worldwide](https://remittanceprices.worldbank.org/en).  
-- Gitcoin Blog. (2023). [Seeking a New Kind of Public Good](https://www.gitcoin.co/blog/seeking-a-new-kind-of-public-good).  
-- Inside Octant. (2023). [Funding Public Goods Through Innovative Community Decision-Making](https://www.cryptoaltruism.org/blog/exploring-the-octant-ecosystem-part-1-inside-octant-funding-public-goods-through-innovative-community-decision-making).  
-- City AM. (2020). [Crypto Guide to Using Uniswap](https://www.cityam.com/crypto-am-definitively-defis-guide-to-using-uniswap/).  
+### Citations
+- Uniswap Docs. (2023). [Fees](https://docs.uniswap.org/contracts/v2/concepts/advanced-topics/fees).
+- World Bank. (2025). [Remittance Prices Worldwide](https://remittanceprices.worldbank.org/).
+- World Bank. (2025). [Q3 2025 RPW report (PDF)](https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf).
+- Gitcoin Blog. (2023). [Seeking a New Kind of Public Good](https://www.gitcoin.co/blog/seeking-a-new-kind-of-public-good).
+- Inside Octant. (2023). [Funding Public Goods Through Innovative Community Decision-Making](https://www.cryptoaltruism.org/blog/exploring-the-octant-ecosystem-part-1-inside-octant-funding-public-goods-through-innovative-community-decision-making).
+- City AM. (2020). [Crypto Guide to Using Uniswap](https://www.cityam.com/crypto-am-definitively-defis-guide-to-using-uniswap/).
