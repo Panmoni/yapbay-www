@@ -1,0 +1,196 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Badge from "@components/ui/badge.astro";
+import Link from "@components/ui/link.astro";
+---
+
+<!-- Option 1: Problem-Solution Landing Page -->
+<!-- Focus: Highlights the pain of remittances, then shows yapbay as the solution -->
+
+<Layout footerMargin={false}>
+  <div class="bg-neutral-900 text-white py-16 md:py-24">
+    <Container>
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-bold [text-wrap:balance]">
+          The $900 Billion<br class="hidden md:block" /> Remittances Problem
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-400 mt-4 max-w-2xl mx-auto [text-wrap:pretty]">
+          Sub-$200 remittances face the highest fees, disproportionately hurting the families that need every dollar most.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-12">
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-primary-400">6.2%</div>
+          <p class="text-neutral-400 mt-2">Average remittance cost in 2023 -- far above the World Bank's 3% target</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-primary-400">$3.3B+</div>
+          <p class="text-neutral-400 mt-2">Annual capital flow blocked from Africa by TradFi systems</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-primary-400">1B+</div>
+          <p class="text-neutral-400 mt-2">People lack formal IDs, locking them out of global finance</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- How It Works -->
+  <div class="py-20">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <Badge color="primary">HOW IT WORKS</Badge>
+        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4">
+          P2P Remittances via Stablecoin Rails
+        </h2>
+        <p class="text-lg text-neutral-600 mt-4 [text-wrap:pretty]">
+          Chain together two P2P trade offers into one fiat-in, fiat-out transaction. Your recipient gets local fiat -- no crypto knowledge required.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <div class="bg-neutral-100 rounded-xl p-8 relative">
+          <div class="absolute -top-4 left-8 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</div>
+          <h3 class="font-bold text-xl mt-4">Sender Deposits Stablecoin</h3>
+          <p class="text-neutral-600 mt-2">Sender chooses a P2P offer and deposits USDC into the smart contract escrow.</p>
+        </div>
+        <div class="bg-neutral-100 rounded-xl p-8 relative">
+          <div class="absolute -top-4 left-8 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</div>
+          <h3 class="font-bold text-xl mt-4">Recipient Receives Fiat</h3>
+          <p class="text-neutral-600 mt-2">A second P2P trader fulfills the outgoing payment -- recipient receives local fiat directly.</p>
+        </div>
+        <div class="bg-neutral-100 rounded-xl p-8 relative">
+          <div class="absolute -top-4 left-8 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</div>
+          <h3 class="font-bold text-xl mt-4">Escrow Releases Funds</h3>
+          <p class="text-neutral-600 mt-2">Smart contract confirms both sides complete and releases funds atomically.</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Feature Grid -->
+  <div class="py-8">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <Badge color="primary">FEATURES</Badge>
+        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4">
+          Built for the Global South
+        </h2>
+        <p class="text-lg text-neutral-600 mt-4 [text-wrap:pretty]">
+          YapBay is a Web3 P2P remittances network on Solana -- fast, cheap, and resistant to censorship.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-8 md:gap-16">
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Near-Zero Fees</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">No YapBay fees. Pay only gas and the offer creator's spread.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Trustless Escrow</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">Sequential smart contract escrow. No trust required between parties.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">KYC-Free</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">No protocol-level identity verification. Privacy by design.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Censorship Resistant</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">Built on Solana. No single point of control or shutdown.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Combo Remittances</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">Buy groceries, medicine, essentials for recipients. Home delivery included.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 items-start group hover:bg-neutral-200 border border-transparent rounded-lg transition-all md:-m-5 p-5">
+          <div class="mt-1 bg-primary-100 border border-primary-200 rounded-lg grid place-items-center p-2 w-10 h-10 shrink-0">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Fully Open Source</h3>
+            <p class="text-neutral-500 mt-2 leading-relaxed">All code MIT licensed. Audited by the community.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Track Record -->
+  <div class="bg-neutral-100 py-16">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <Badge color="primary">TRACK RECORD</Badge>
+        <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4">
+          Proven in the Field
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mt-12 text-center">
+        <div>
+          <div class="text-4xl font-bold text-primary-600">~10,000</div>
+          <p class="text-neutral-600 mt-2">People onboarded to crypto through our prior fieldwork in Latin America (2018-2021)</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-600">Madrid to Caracas</div>
+          <p class="text-neutral-600 mt-2">Remittances pilot popular among Venezuelan expats in Spain (2019)</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-600">Nigeria + Venezuela</div>
+          <p class="text-neutral-600 mt-2">Active communities building right now</p>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- CTA -->
+  <div class="bg-gradient-to-bl from-primary-900 to-primary-700 p-8 md:px-20 md:py-20 flex flex-col items-center text-center">
+    <h2 class="text-white text-4xl md:text-6xl tracking-tight">
+      Ready to send?
+    </h2>
+    <p class="text-white/70 mt-4 text-lg md:text-xl max-w-xl">
+      Join the community building the future of borderless, affordable remittances.
+    </p>
+    <div class="flex mt-5 gap-4 flex-col sm:flex-row">
+      <Link href="https://t.me/Panmoni/288" style="inverted" target="_blank">Join the Telegram Community</Link>
+      <Link href="https://github.com/Panmoni/yapbay" style="outline" target="_blank">View on GitHub</Link>
+    </div>
+  </div>
+</Layout>

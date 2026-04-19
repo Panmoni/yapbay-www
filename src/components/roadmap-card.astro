@@ -1,32 +1,26 @@
 ---
 interface Props {
-	quarter: string;
-	status: "completed" | "in-progress" | "planned" | "postponed";
-	title: string;
-	description: string;
-	progress?: number;
+  quarter: string;
+  status: "completed" | "in-progress" | "planned" | "postponed";
+  title: string;
+  description: string;
+  progress?: number;
 }
 
-const {
-	quarter: _quarter,
-	status: _status,
-	title: _title,
-	description: _description,
-	progress: _progress,
-} = Astro.props;
+const { quarter, status, title, description, progress } = Astro.props;
 
-const _statusColors = {
-	completed: "bg-secondary-500",
-	"in-progress": "bg-primary-500",
-	planned: "bg-neutral-300",
-	postponed: "bg-neutral-400",
+const statusColors = {
+  "completed": "bg-secondary-500",
+  "in-progress": "bg-primary-500",
+  "planned": "bg-neutral-300",
+  "postponed": "bg-neutral-400"
 };
 
-const _statusText = {
-	completed: "Completed",
-	"in-progress": "In Progress",
-	planned: "Planned",
-	postponed: "Postponed",
+const statusText = {
+  "completed": "Completed",
+  "in-progress": "In Progress",
+  "planned": "Planned",
+  "postponed": "Postponed"
 };
 ---
 

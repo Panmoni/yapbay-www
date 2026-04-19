@@ -1,34 +1,34 @@
 ---
 interface Props {
-	href: string;
-	size?: "md" | "lg" | "sm";
-	block?: boolean;
-	style?: "outline" | "primary" | "inverted" | "muted";
-	class?: string;
-	[x: string]: unknown;
+  href: string;
+  size?: "md" | "lg" | "sm";
+  block?: boolean;
+  style?: "outline" | "primary" | "inverted" | "muted";
+  class?: string;
+  [x: string]: any;
 }
 
 const {
-	href,
-	block,
-	size = "lg",
-	style = "primary",
-	class: className,
-	..._rest
+  href,
+  block,
+  size = "lg",
+  style = "primary",
+  class: className,
+  ...rest
 } = Astro.props;
 
-const _sizes = {
-	lg: "px-7 py-2.5",
-	md: "px-5 py-2",
-	sm: "px-4 py-2 text-sm",
+const sizes = {
+  lg: "px-7 py-2.5",
+  md: "px-5 py-2",
+  sm: "px-4 py-2 text-sm",
 };
 
-const _styles = {
-	outline:
-		"bg-neutral-100 border-2 border-primary-600 hover:bg-primary-50 text-primary-600",
-	primary: "bg-primary-600 text-neutral-100 hover:bg-primary-800",
-	inverted: "bg-neutral-100 text-primary-800 border-2 border-transparent",
-	muted: "bg-neutral-200 hover:bg-neutral-300 border-2 border-transparent",
+const styles = {
+  outline:
+    "bg-neutral-100 border-2 border-primary-600 hover:bg-primary-50 text-primary-600",
+  primary: "bg-primary-600 text-neutral-100 hover:bg-primary-800",
+  inverted: "bg-neutral-100 text-primary-800 border-2 border-transparent",
+  muted: "bg-neutral-200 hover:bg-neutral-300 border-2 border-transparent",
 };
 ---
 

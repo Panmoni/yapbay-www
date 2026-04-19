@@ -1,59 +1,62 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
 import {
-	Discord,
-	Intercom,
-	Messenger,
-	Shopify,
-	Slack,
-	Zapier,
+  Slack,
+  Zapier,
+  Intercom,
+  Shopify,
+  Messenger,
+  Discord,
 } from "@components/ui/icons";
 
-const _integrations = [
-	{
-		name: "Slack",
-		description:
-			"Get notified in your Slack channels when a new order is placed.",
-		Icon: Slack,
-		link: "#",
-	},
+const integrations = [
+  {
+    name: "Slack",
+    description:
+      "Get notified in your Slack channels when a new order is placed.",
+    Icon: Slack,
+    link: "#",
+  },
 
-	{
-		name: "Zapier",
-		description:
-			"Connect over 200+ tools with our easy to use Zapier integrations.",
-		Icon: Zapier,
-		link: "#",
-	},
+  {
+    name: "Zapier",
+    description:
+      "Connect over 200+ tools with our easy to use Zapier integrations.",
+    Icon: Zapier,
+    link: "#",
+  },
 
-	{
-		name: "Intercom",
-		description:
-			"Send order updates and emails to your customers via Intercom.",
-		Icon: Intercom,
-		link: "#",
-	},
+  {
+    name: "Intercom",
+    description:
+      "Send order updates and emails to your customers via Intercom.",
+    Icon: Intercom,
+    link: "#",
+  },
 
-	{
-		name: "Shopify",
-		description:
-			"Create orders and customers in Shopify when a new order is placed.",
-		Icon: Shopify,
-		link: "#",
-	},
+  {
+    name: "Shopify",
+    description:
+      "Create orders and customers in Shopify when a new order is placed.",
+    Icon: Shopify,
+    link: "#",
+  },
 
-	{
-		name: "Messenger",
-		description: "Notify your Facebook Messenger when a new order is placed.",
-		Icon: Messenger,
-		link: "#",
-	},
+  {
+    name: "Messenger",
+    description: "Notify your Facebook Messenger when a new order is placed.",
+    Icon: Messenger,
+    link: "#",
+  },
 
-	{
-		name: "Discord",
-		description: "Notify your Discord server when a new order is placed.",
-		Icon: Discord,
-		link: "#",
-	},
+  {
+    name: "Discord",
+    description: "Notify your Discord server when a new order is placed.",
+    Icon: Discord,
+    link: "#",
+  },
 ];
 ---
 

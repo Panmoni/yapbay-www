@@ -1,5 +1,9 @@
 ---
-const { frontmatter: _frontmatter } = Astro.props;
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>

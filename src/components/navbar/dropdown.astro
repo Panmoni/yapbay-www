@@ -1,14 +1,16 @@
 ---
+import { Dropdown as NavDropdown, DropdownItems } from "astro-navbar";
+
 interface Props {
-	title: string;
-	lastItem: boolean;
-	children: {
-		title: string;
-		path: string;
-	}[];
+  title: string;
+  lastItem: boolean;
+  children: {
+    title: string;
+    path: string;
+  }[];
 }
 
-const { title: _title, lastItem: _lastItem, children: _children } = Astro.props;
+const { title, lastItem, children } = Astro.props;
 ---
 
 <li class="relative z-50 isolate">

@@ -1,37 +1,38 @@
 ---
-const { margin: _margin } = Astro.props;
+import Container from "@components/container.astro";
+import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import SolanaLogo from "../assets/solana.svg";
+
+const { margin } = Astro.props;
 
 interface MenuItem {
-	title: string;
-	path: string;
+  title: string;
+  path: string;
 }
 
-const _footermenu: {
-	company: MenuItem[];
-	product: MenuItem[];
-	resources: MenuItem[];
-} = {
-	company: [
-		{
-			title: "About",
-			path: "/about",
-		},
-		{
-			title: "Blog",
-			path: "/blog",
-		},
-		{
-			title: "Contact",
-			path: "/contact",
-		},
-	],
-	product: [
-		{
-			title: "Roadmap",
-			path: "/roadmap",
-		},
-	],
-	resources: [],
+const footermenu: { company: MenuItem[]; product: MenuItem[]; resources: MenuItem[] } = {
+  company: [
+    {
+      title: "About",
+      path: "/about",
+    },
+    {
+      title: "Blog",
+      path: "/blog",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+  ],
+  product: [
+    {
+      title: "Roadmap",
+      path: "/roadmap",
+    },
+  ],
+  resources: [],
 };
 ---
 

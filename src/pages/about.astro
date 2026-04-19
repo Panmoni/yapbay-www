@@ -1,9 +1,22 @@
 ---
 import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import About1 from "../assets/about/about1.jpg";
+import About2 from "../assets/about/about2.jpg";
+import Deck from "../assets/about/deck.png";
+import Solution from "../assets/about/solution.svg";
+import Impact from "../assets/about/impact.svg";
+import Vision from "../assets/about/vision.svg";
+import { Icon } from "astro-icon/components";
+import Cta from "@components/cta.astro";
 
 // Filter team entries with 'draft: false' & date before current date
-const _publishedTeamMembers = await getCollection("team", ({ data }) => {
-	return !data.draft && data.publishDate < new Date();
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
 });
 ---
 

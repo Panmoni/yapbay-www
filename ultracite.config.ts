@@ -6,5 +6,5 @@ export default defineConfig({
 	// Target file patterns
 	include: ["src/**", "scripts/**", "astro.config.mjs", "tailwind.config.cjs"],
 	// Exclude patterns
-	exclude: ["dist/**", "node_modules/**", ".astro/**"],
+	exclude: ["dist/**", "node_modules/**", ".astro/**", "**/*.astro"],
 });
